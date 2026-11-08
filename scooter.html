@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mobility Scooter Range Calculator — How Far Will It Really Go?</title>
+<meta name="description" content="The range on the box is a lab number. Enter your battery, weight, terrain and weather and get your mobility scooter's real-world range — plus the distance you should actually plan trips around.">
+<style>
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;max-width:760px;margin:0 auto;padding:20px;line-height:1.5;color:#14202b}
+.card{border:1px solid #d7dee6;border-radius:12px;padding:16px;margin:16px 0}
+label{display:block;font-weight:600;margin:12px 0 4px}
+input,select{width:100%;padding:10px;border:1px solid #b9c4cf;border-radius:8px;font-size:16px;box-sizing:border-box}
+button{background:#ff9900;border:0;padding:12px 18px;border-radius:8px;font-weight:700;font-size:16px;cursor:pointer;width:100%}
+.small{font-size:13px;color:#52606d}.result{font-size:20px;font-weight:700}
+a.btn{display:block;text-align:center;background:#232f3e;color:#fff;padding:12px;border-radius:8px;text-decoration:none;margin:8px 0}
+a.open{display:block;text-align:center;background:#ff9900;color:#14202b;padding:12px;border-radius:8px;text-decoration:none;font-weight:700;margin:8px 0}
+.disclosure{background:#fff8e1;border:1px solid #f0d48a;padding:10px;border-radius:8px;font-size:13px}
+footer{border-top:1px solid #d7dee6;margin-top:28px;padding-top:14px}
+.check{display:flex;align-items:center;gap:10px;font-weight:400;margin:0;padding:10px 6px;border-bottom:1px solid #eef2f6}
+.check input{width:22px;height:22px;flex:none}
+.check .w{margin-left:auto;font-size:13px;color:#52606d;text-align:right}
+.faq h3{margin:14px 0 4px;font-size:16px}
+.faq p{margin:0 0 10px}
+nav.top{font-size:14px;margin-bottom:6px}
+.xlinks{font-size:14px}
+.xlinks a{margin-right:10px}
+</style>
+</head>
+<body>
+<nav class="top"><a href="index.html">← All tools</a></nav>
+<h1>How far will your mobility scooter really go?</h1>
+<p>The range printed on the box was measured in a lab: a light rider, a brand-new battery, flat pavement, mild weather, one steady slow speed. Real life is none of those — owners consistently report <strong>25–40% less range than advertised</strong>. Answer five plain questions and get the honest number, plus the distance you should actually plan your trips around.</p>
+<p class="disclosure">Disclosure: As an Amazon Associate I earn from qualifying purchases. Links below go to Amazon — tap the button to see the current price there.</p>
+
+<div class="card">
+<label>Scooter size</label>
+<select id="s-class">
+<option value="16">Travel / portable (folds or comes apart for the car)</option>
+<option value="20" selected>Mid-size (the most common kind)</option>
+<option value="28">Heavy-duty / outdoor (big tires, high weight capacity)</option>
+</select>
+
+<label>Battery voltage (V)</label>
+<input id="s-volts" type="number" value="24" min="12" step="1">
+<p class="small">Almost every mobility scooter runs on 24 V (two 12 V batteries). Check the label on your battery pack if you're not sure.</p>
+
+<label>Battery capacity (Ah)</label>
+<input id="s-ah" type="number" value="20" min="1" step="1">
+<p class="small">Printed on the battery or in your manual. Common sizes: 12 Ah on travel scooters, 18–24 Ah mid-size, 50–100 Ah heavy-duty. If you have two batteries, this is the rating of one pack as sold — scooter ratings are already for the pair.</p>
+
+<label>Battery type</label>
+<select id="s-type">
+<option value="0.55" selected>Lead-acid (sealed / AGM / gel — the heavy black kind)</option>
+<option value="0.85">Lithium (Li-ion / LiFePO4 — much lighter)</option>
+</select>
+<p class="small">This matters more than most people realize: a lead-acid battery can only use about half its rated capacity without damaging itself, while lithium can use most of its charge.</p>
+
+<label>Your weight + anything you carry (lb)</label>
+<input id="s-load" type="number" value="190" min="50" step="5">
+<p class="small">You, plus shopping, an oxygen tank, a bag on the tiller — it all counts.</p>
+
+<label>Where you ride</label>
+<select id="s-terrain">
+<option value="1">Flat and paved — sidewalks, malls, level streets</option>
+<option value="1.15" selected>Mixed — some slopes, driveways, short grass</option>
+<option value="1.4">Hilly or rough — real hills, gravel, long grass</option>
+</select>
+
+<label>Weather when you ride</label>
+<select id="s-temp">
+<option value="1" selected>Mild — above 10 °C (50 °F)</option>
+<option value="0.92">Cool — 0 to 10 °C (32–50 °F)</option>
+<option value="0.78">Freezing — below 0 °C (32 °F)</option>
+</select>
+<p class="small">Cold batteries hold less charge. A Canadian January can quietly take a fifth to a quarter of your range.</p>
+
+<label>Battery age</label>
+<select id="s-age">
+<option value="1" selected>New — under a year old</option>
+<option value="0.9">1–2 years old</option>
+<option value="0.78">3+ years old, or range already dropping</option>
+</select>
+
+<label>Advertised range on the box (miles, optional)</label>
+<input id="s-adv" type="number" value="" min="0" step="1" placeholder="e.g. 15 — leave blank if you don't know it">
+<p class="small">If you enter it, we'll show you exactly how far below the sticker your real number lands.</p>
+
+<button style="margin-top:14px" onclick="calc()">Calculate my real range</button>
+<p class="result" id="out"></p>
+<p id="detail"></p>
+</div>
+
+<h2>Getting your scooter where it needs to go</h2>
+<p class="small">As an Amazon Associate I earn from qualifying purchases. Prices change — the button shows the current price on Amazon.</p>
+<div class="card"><strong>Telescoping wheelchair &amp; scooter ramp, 7 ft</strong><br>For loading your scooter into a vehicle or getting it over a step at a home you're visiting. Adjustable, portable, no installation.<a class="btn" href="https://www.amazon.ca/dp/B0FR8S9SHT?tag=inthesixprodu-20" data-slot="scooter-1">Check the current price on Amazon</a></div>
+<div class="card"><strong>Threshold ramp</strong><br>A short, heavy wedge for the door thresholds that catch a scooter's wheels — makes a doorway rollable in minutes.<a class="btn" href="https://www.amazon.ca/dp/B0F1KCPCMM?tag=inthesixprodu-20" data-slot="scooter-2">Check the current price on Amazon</a></div>
+
+<h2>Common questions</h2>
+<div class="faq">
+<h3>Why is my scooter's real range so much less than advertised?</h3>
+<p>Because the advertised number is measured under perfect conditions: a rider around 165 lb, a brand-new battery, flat smooth ground, mild weather, and a constant gentle speed with no stops. Every real-world factor chips away at it — your weight, hills and grass, cold weather, an aging battery, and stop-and-go riding. Industry guides put the real-world figure at 25–40% below the sticker, which matches what this calculator produces under typical settings.</p>
+<h3>How far should I actually plan to go?</h3>
+<p>Plan your trips around about 80% of your realistic range — the "plan around" number above. That leaves a reserve so a detour, a headwind, or a longer-than-expected errand never leaves you limping home on a nearly dead battery, which is both miserable and hard on the battery itself.</p>
+<h3>Does cold weather really cut range that much?</h3>
+<p>Yes — battery chemistry slows down in the cold. Lead-acid batteries can lose roughly a quarter of their capacity near freezing, and lithium loses some too. If your winter range feels much shorter than your summer range, that's physics, not a broken scooter. Storing and charging the scooter somewhere warm helps.</p>
+<h3>When should I replace my scooter batteries?</h3>
+<p>Lead-acid scooter batteries typically last 1–3 years depending on use and charging habits. The classic sign is exactly what this page is about: a trip you used to make easily now drains the gauge. If your realistic range has dropped by a third or more versus when the batteries were new, replacement is usually the fix — and it's far cheaper than a new scooter.</p>
+<h3>What uses the most range on a trip?</h3>
+<p>In order: hills and soft ground (grass and gravel can cost 40% more energy), total weight, cold, and speed — full speed drains noticeably faster than three-quarter speed. Smooth, flat, mild-weather routes at a moderate pace are how owners squeeze the most distance out of a charge.</p>
+</div>
+
+<p class="xlinks"><strong>More free tools:</strong>
+<a href="ramp.html">Wheelchair Ramp Calculator</a>
+<a href="generator.html">Generator Wattage Calculator</a>
+<a href="outage.html">Medical Device Outage Planner</a>
+<a href="https://inthe6production.github.io/ice-melt-calculator/">Ice Melt Calculator</a>
+<a href="index.html">All tools</a></p>
+
+<footer>
+<p class="small">As an Amazon Associate I earn from qualifying purchases.</p>
+<p class="small">All tools on this site are free to use. Range results are planning estimates based on typical scooter power use, battery behaviour and the derating factors described above — your scooter's real range will vary with its condition, your routes and the weather. Never plan a trip that leaves you stranded if the estimate is off; when in doubt, take the shorter route or a mid-trip charge.</p>
+</footer>
+
+<script>
+function calc(){
+  const base=+document.getElementById('s-class').value;          // Wh per mile at reference conditions
+  const volts=+document.getElementById('s-volts').value||0;
+  const ah=+document.getElementById('s-ah').value||0;
+  const usableFrac=+document.getElementById('s-type').value;     // share of rated capacity you can really use
+  const load=+document.getElementById('s-load').value||0;
+  const terrain=+document.getElementById('s-terrain').value;
+  const tempF=+document.getElementById('s-temp').value;          // cold-weather capacity factor
+  const ageF=+document.getElementById('s-age').value;            // battery age factor
+  const adv=+document.getElementById('s-adv').value||0;
+  const out=document.getElementById('out'), det=document.getElementById('detail');
+  if(volts<=0||ah<=0||load<=0){ out.textContent='Enter your battery voltage, capacity, and total weight.'; det.textContent=''; return; }
+  const nominal=volts*ah;                                        // rated watt-hours
+  const usable=nominal*usableFrac*tempF*ageF;                    // watt-hours you can actually spend
+  const loadF=Math.max(0.82, 1+(load-170)*0.0018);               // heavier load = more Wh per mile
+  const whPerMile=base*loadF*terrain;
+  const range=usable/whPerMile;                                  // miles
+  const lo=range*0.85, hi=range*1.15, plan=range*0.8;
+  const km=x=>(x*1.609).toFixed(1);
+  out.textContent=`Your realistic range: about ${range.toFixed(1)} miles (${km(range)} km) — plan trips around ${plan.toFixed(1)} miles (${km(plan)} km).`;
+  let msg=`Your battery is rated ${nominal.toLocaleString('en-CA')} Wh, but after the usable-capacity limit, battery age and weather, about ${Math.round(usable).toLocaleString('en-CA')} Wh is really available. At roughly ${whPerMile.toFixed(0)} Wh per mile for your weight and terrain, that works out to ${lo.toFixed(1)}–${hi.toFixed(1)} miles depending on the day. The "plan around" figure keeps a 20% reserve in hand.`;
+  if(adv>0){
+    const below=Math.max(0,(1-range/adv)*100);
+    msg+=` The box promised ${adv} miles — your realistic figure is about ${below.toFixed(0)}% below it, right in the 25–40% gap owners typically report.`;
+  }
+  det.textContent=msg;
+}
+calc();
+</script>
+</body>
+</html>

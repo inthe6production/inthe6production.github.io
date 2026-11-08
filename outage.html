@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Medical Device Power Outage Planner — How Long Will a Battery Station Run Your CPAP or Oxygen?</title>
+<meta name="description" content="Tick the medical devices you depend on — CPAP, oxygen concentrator, power wheelchair, medication fridge — and find out how long a portable power station really runs them, and what size you need for a night, a day, or three days.">
+<style>
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;max-width:760px;margin:0 auto;padding:20px;line-height:1.5;color:#14202b}
+.card{border:1px solid #d7dee6;border-radius:12px;padding:16px;margin:16px 0}
+label{display:block;font-weight:600;margin:12px 0 4px}
+input,select{width:100%;padding:10px;border:1px solid #b9c4cf;border-radius:8px;font-size:16px;box-sizing:border-box}
+button{background:#ff9900;border:0;padding:12px 18px;border-radius:8px;font-weight:700;font-size:16px;cursor:pointer;width:100%}
+.small{font-size:13px;color:#52606d}.result{font-size:20px;font-weight:700}
+a.btn{display:block;text-align:center;background:#232f3e;color:#fff;padding:12px;border-radius:8px;text-decoration:none;margin:8px 0}
+a.open{display:block;text-align:center;background:#ff9900;color:#14202b;padding:12px;border-radius:8px;text-decoration:none;font-weight:700;margin:8px 0}
+.disclosure{background:#fff8e1;border:1px solid #f0d48a;padding:10px;border-radius:8px;font-size:13px}
+footer{border-top:1px solid #d7dee6;margin-top:28px;padding-top:14px}
+.check{display:flex;align-items:center;gap:10px;font-weight:400;margin:0;padding:10px 6px;border-bottom:1px solid #eef2f6}
+.check input{width:22px;height:22px;flex:none}
+.check .w{margin-left:auto;font-size:13px;color:#52606d;text-align:right}
+.faq h3{margin:14px 0 4px;font-size:16px}
+.faq p{margin:0 0 10px}
+nav.top{font-size:14px;margin-bottom:6px}
+.xlinks{font-size:14px}
+.xlinks a{margin-right:10px}
+.hrs{width:74px!important;flex:none;padding:6px!important;font-size:15px}
+</style>
+</head>
+<body>
+<nav class="top"><a href="index.html">← All tools</a></nav>
+<h1>When the power goes out, how long will your medical devices run?</h1>
+<p>If you rely on a CPAP, an oxygen concentrator, a power wheelchair or refrigerated medication, an outage isn't an inconvenience — it's a clock. <strong>Tick the devices you depend on</strong>, set how many hours a day each one runs, and get the plain answer: how long common battery power stations will actually carry you, and what you'd need to get through a night, a full day, or three days.</p>
+<p class="disclosure">Disclosure: As an Amazon Associate I earn from qualifying purchases. Links below go to Amazon — tap the button to see the current price there.</p>
+<p class="disclosure" style="background:#fdecea;border-color:#e5a09a"><strong>Important:</strong> this planner gives estimates for preparing ahead — it is not medical advice. If any device is life-sustaining for you, talk to your equipment provider about a backup plan, and ask your electricity utility about their medical priority list (most keep one, and register customers who depend on powered medical equipment). Never let a battery estimate be your only plan.</p>
+
+<div class="card">
+<p><strong>Your devices</strong> <span class="small">(watts are typical figures — the rating label on your own device is the final word. Adjust the hours to match your day.)</span></p>
+<label class="check"><input type="checkbox" id="d0" data-w="40"> CPAP machine (no humidifier) <span class="w">40 W</span><input class="hrs" id="h0" type="number" value="8" min="0" max="24" step="0.5"> hrs/day</label>
+<label class="check"><input type="checkbox" id="d1" data-w="90"> CPAP with heated humidifier <span class="w">90 W</span><input class="hrs" id="h1" type="number" value="8" min="0" max="24" step="0.5"> hrs/day</label>
+<label class="check"><input type="checkbox" id="d2" data-w="350"> Home oxygen concentrator <span class="w">350 W</span><input class="hrs" id="h2" type="number" value="24" min="0" max="24" step="0.5"> hrs/day</label>
+<label class="check"><input type="checkbox" id="d3" data-w="90"> Portable oxygen concentrator <span class="w">90 W</span><input class="hrs" id="h3" type="number" value="8" min="0" max="24" step="0.5"> hrs/day</label>
+<label class="check"><input type="checkbox" id="d4" data-w="150"> Power wheelchair charger <span class="w">150 W</span><input class="hrs" id="h4" type="number" value="5" min="0" max="24" step="0.5"> hrs/day</label>
+<label class="check"><input type="checkbox" id="d5" data-w="60"> Medication fridge (mini fridge) <span class="w">60 W avg</span><input class="hrs" id="h5" type="number" value="24" min="0" max="24" step="0.5"> hrs/day</label>
+<label class="check"><input type="checkbox" id="d6" data-w="100"> Full-size refrigerator (medication + food) <span class="w">100 W avg</span><input class="hrs" id="h6" type="number" value="24" min="0" max="24" step="0.5"> hrs/day</label>
+<label class="check"><input type="checkbox" id="d7" data-w="60"> Hospital / adjustable bed <span class="w">60 W</span><input class="hrs" id="h7" type="number" value="1" min="0" max="24" step="0.5"> hrs/day</label>
+<label class="check"><input type="checkbox" id="d8" data-w="100"> Nebulizer <span class="w">100 W</span><input class="hrs" id="h8" type="number" value="0.5" min="0" max="24" step="0.5"> hrs/day</label>
+<label class="check"><input type="checkbox" id="d9" data-w="25"> Feeding pump <span class="w">25 W</span><input class="hrs" id="h9" type="number" value="12" min="0" max="24" step="0.5"> hrs/day</label>
+<label class="check"><input type="checkbox" id="d10" data-w="15"> Phone &amp; tablet charging <span class="w">15 W</span><input class="hrs" id="h10" type="number" value="3" min="0" max="24" step="0.5"> hrs/day</label>
+
+<label>How long an outage do you want to be ready for?</label>
+<select id="goal">
+<option value="8">One night (8 hours)</option>
+<option value="24" selected>A full day (24 hours)</option>
+<option value="72">Three days (72 hours)</option>
+</select>
+
+<button style="margin-top:14px" onclick="calc()">Build my outage plan</button>
+<p class="result" id="out"></p>
+<p id="detail"></p>
+<p id="runtime"></p>
+</div>
+
+<h2>When a battery station isn't enough</h2>
+<p>For a CPAP alone, a mid-size power station is a clean fix. But a home oxygen concentrator running around the clock uses more energy in a day than the biggest portable stations hold — past a day, the honest answer is a generator (with a battery station bridging the gaps and the nights). These are the same checked picks from our generator calculator:</p>
+<p class="small">As an Amazon Associate I earn from qualifying purchases. Prices change — the button shows the current price on Amazon.</p>
+<div class="card"><strong>Portable inverter generator</strong><br>Quiet, fuel-sipping, and produces the clean power CPAP machines and medical electronics want. The right pick for most homes up to about 4,000 W of need.<a class="btn" href="https://www.amazon.ca/dp/B0DZXD33BR?tag=inthesixprodu-20" data-slot="outage-1">Check the current price on Amazon</a></div>
+<div class="card"><strong>Dual-fuel generator</strong><br>Runs on gasoline or a propane tank — propane stores for years without going stale, so it's ready when a long outage hits.<a class="btn" href="https://www.amazon.ca/dp/B099KSY4XG?tag=inthesixprodu-20" data-slot="outage-2">Check the current price on Amazon</a></div>
+<div class="card"><strong>Carbon monoxide alarm</strong><br>Non-negotiable with any generator: generators make carbon monoxide, which you can't see or smell. One battery alarm near the bedrooms.<a class="btn" href="https://www.amazon.ca/dp/B001P3UO3Y?tag=inthesixprodu-20" data-slot="outage-3">Check the current price on Amazon</a></div>
+
+<h2>Common questions</h2>
+<div class="faq">
+<h3>Can a portable power station run an oxygen concentrator overnight?</h3>
+<p>For a home concentrator, usually not on its own — the honest math surprises people. A home unit draws about 350 W, so one 8-hour night takes roughly 2,800 Wh of energy, and about 3,300 Wh of power station once conversion losses are counted. That's beyond all but the very largest portable stations. A portable concentrator is a different story: at roughly 90 W it uses about a quarter as much, and a 1,000 Wh station can carry it through a night. Run your own devices through the planner above for your exact numbers.</p>
+<h3>Why does the heated humidifier change the CPAP number so much?</h3>
+<p>Heating water takes real power. A CPAP by itself sips about 40 W; turn on the heated humidifier and heated tube and it roughly doubles, to around 90 W. On battery, many people turn the humidifier off for outage nights — one night without it can nearly double how long a station lasts. (If that's uncomfortable for you, size the battery for the humidifier on, like the planner does.)</p>
+<h3>Why does the planner say a station delivers less than its rated size?</h3>
+<p>A "1,000 Wh" station doesn't deliver 1,000 Wh to your devices. Converting battery power to household power loses roughly 15%, so about 850 Wh reaches your equipment. Every runtime here is calculated on the delivered figure, not the box figure — that's the difference between a plan and a guess.</p>
+<h3>What should I do besides buying a battery?</h3>
+<p>Three free things. First, register with your electricity utility's medical priority or life-support list if they keep one — it can mean priority notice of planned outages. Second, tell your equipment provider you want an outage plan on file; many supply backup bottles or loaner batteries for exactly this. Third, keep a written plan — which devices, in what order, on which battery — somewhere your family or caregiver can find it in the dark.</p>
+<h3>Generator or power station — which do I need?</h3>
+<p>Both do different jobs. A power station is silent, safe indoors, and instant — perfect for a CPAP through the night. A generator makes far more energy over a long outage but must run outdoors, away from windows, because of carbon monoxide. For concentrator users facing multi-day outages, the common setup is a station for the night plus a generator for daytime recharging and running — our <a href="generator.html">Generator Wattage Calculator</a> sizes that side of the plan.</p>
+</div>
+
+<p class="xlinks"><strong>More free tools:</strong>
+<a href="generator.html">Generator Wattage Calculator</a>
+<a href="scooter.html">Mobility Scooter Range Calculator</a>
+<a href="ramp.html">Wheelchair Ramp Calculator</a>
+<a href="https://inthe6production.github.io/ice-melt-calculator/">Ice Melt Calculator</a>
+<a href="index.html">All tools</a></p>
+
+<footer>
+<p class="small">As an Amazon Associate I earn from qualifying purchases.</p>
+<p class="small">All tools on this site are free to use. Results are planning estimates based on typical device wattages and an 85% delivery efficiency for battery stations — your devices' rating labels are the final word. This planner does not replace advice from your equipment provider or physician, and no battery plan should be the only backup for life-sustaining equipment.</p>
+</footer>
+
+<script>
+const STATION_SIZES=[300,512,768,1000,1500,2000,3000,4000,5000,6000,8000,10000];
+function fmtH(h){
+  if(h<1) return Math.round(h*60)+' minutes';
+  if(h<48) return h.toFixed(1)+' hours';
+  return (h/24).toFixed(1)+' days';
+}
+function calc(){
+  let whDay=0, peak=0, any=false;
+  for(let i=0;i<11;i++){
+    const el=document.getElementById('d'+i);
+    if(el && el.checked){
+      any=true;
+      const w=+el.dataset.w;
+      const hrs=Math.min(24, Math.max(0, +document.getElementById('h'+i).value||0));
+      whDay+=w*hrs;
+      peak+=w;
+    }
+  }
+  const out=document.getElementById('out'), det=document.getElementById('detail'), rt=document.getElementById('runtime');
+  if(!any){ out.textContent='Tick at least one device above.'; det.textContent=''; rt.textContent=''; return; }
+  const goalH=+document.getElementById('goal').value;
+  let need=0;
+  for(let i=0;i<11;i++){
+    const el=document.getElementById('d'+i);
+    if(el && el.checked){
+      const w=+el.dataset.w;
+      const hrs=Math.min(24, Math.max(0, +document.getElementById('h'+i).value||0));
+      need+=w*Math.min(hrs, goalH);
+    }
+  }
+  const stationNeed=need/0.85;   // stations deliver about 85% of their rated Wh
+  const avgW=whDay/24;           // average draw across the day
+  let rec=null;
+  for(const s of STATION_SIZES){ if(stationNeed<=s){ rec=s; break; } }
+  const goalLabel=goalH===8?'one night (8 hours)':goalH===24?'a full day (24 hours)':'three days (72 hours)';
+  if(rec){
+    out.textContent=`To cover ${goalLabel}, you need about a ${rec.toLocaleString('en-CA')} Wh power station.`;
+    det.textContent=`Your devices use about ${Math.round(whDay).toLocaleString('en-CA')} Wh a day, and up to ${peak.toLocaleString('en-CA')} W at once if everything runs together — check any station's output rating covers that too. The station size above already counts the roughly 15% of battery power lost in conversion.`;
+  } else {
+    out.textContent=`Covering ${goalLabel} takes about ${Math.round(stationNeed).toLocaleString('en-CA')} Wh of battery — more than any single portable power station holds.`;
+    det.textContent=`Your devices use about ${Math.round(whDay).toLocaleString('en-CA')} Wh a day. For an outage this long, the realistic setup is a generator for the bulk of the power plus a station for quiet overnight stretches — the section below explains, and our Generator Wattage Calculator sizes the generator. Talk to your equipment provider before relying on any single plan.`;
+  }
+  let lines=[];
+  for(const s of [512,1024,2048]){
+    const usable=s*0.85;
+    lines.push(`a ${s.toLocaleString('en-CA')} Wh station runs your setup for about ${fmtH(usable/avgW)}`);
+  }
+  rt.textContent='For scale: '+lines.join(' · ')+'.';
+}
+</script>
+</body>
+</html>
