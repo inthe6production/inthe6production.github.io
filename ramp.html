@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Wheelchair Ramp Calculator — How Long Does Your Ramp Need to Be?</title>
+<meta name="description" content="Enter the height of your step or threshold in inches. Get the ramp length you need at the standard 1:12 slope, plus gentler options, and the slope angle.">
+<style>
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;max-width:760px;margin:0 auto;padding:20px;line-height:1.5;color:#14202b}
+.card{border:1px solid #d7dee6;border-radius:12px;padding:16px;margin:16px 0}
+label{display:block;font-weight:600;margin:12px 0 4px}
+input,select{width:100%;padding:10px;border:1px solid #b9c4cf;border-radius:8px;font-size:16px;box-sizing:border-box}
+button{background:#ff9900;border:0;padding:12px 18px;border-radius:8px;font-weight:700;font-size:16px;cursor:pointer;width:100%}
+.small{font-size:13px;color:#52606d}.result{font-size:20px;font-weight:700}
+a.btn{display:block;text-align:center;background:#232f3e;color:#fff;padding:12px;border-radius:8px;text-decoration:none;margin:8px 0}
+a.open{display:block;text-align:center;background:#ff9900;color:#14202b;padding:12px;border-radius:8px;text-decoration:none;font-weight:700;margin:8px 0}
+.disclosure{background:#fff8e1;border:1px solid #f0d48a;padding:10px;border-radius:8px;font-size:13px}
+footer{border-top:1px solid #d7dee6;margin-top:28px;padding-top:14px}
+.check{display:flex;align-items:center;gap:10px;font-weight:400;margin:0;padding:10px 6px;border-bottom:1px solid #eef2f6}
+.check input{width:22px;height:22px;flex:none}
+.check .w{margin-left:auto;font-size:13px;color:#52606d;text-align:right}
+.faq h3{margin:14px 0 4px;font-size:16px}
+.faq p{margin:0 0 10px}
+nav.top{font-size:14px;margin-bottom:6px}
+.xlinks{font-size:14px}
+.xlinks a{margin-right:10px}
+</style>
+</head>
+<body>
+<nav class="top"><a href="index.html">← All tools</a></nav>
+<h1>How long does your wheelchair ramp need to be?</h1>
+<p>A ramp that's too short is too steep to use safely — this is the mistake almost everyone makes. <strong>Measure the height of the step, porch or threshold</strong> and get the right length at three standard slopes, from the legal standard to an easy, gentle climb.</p>
+<p class="disclosure">Disclosure: As an Amazon Associate I earn from qualifying purchases. Links below go to Amazon — tap the button to see the current price there.</p>
+
+<div class="card">
+<label>Rise — total height to climb (inches)</label>
+<input id="r-rise" type="number" value="24" min="0" step="1">
+<p class="small">Measure from the ground straight up to the top of the landing or threshold. A standard house step is about 7–8 inches; two steps plus a threshold is often 14–16 inches; a porch can be 24 inches or more.</p>
+
+<button onclick="calc()">Calculate ramp length</button>
+<p class="result" id="out"></p>
+<p id="detail"></p>
+<p><strong>Good to know:</strong> longer ramps usually need flat landings partway up and at the top, and a permanent ramp often needs a municipal building permit. Portable ramps for a step or two usually don't — but check your local rules before building anything permanent.</p>
+</div>
+
+<h2>What you'd need</h2>
+<p class="small">As an Amazon Associate I earn from qualifying purchases. Prices change — the button shows the current price on Amazon.</p>
+<div class="card"><strong>Portable folding wheelchair ramp</strong><br>Folds up and carries like a suitcase — ideal for one or two steps, visiting family, or a temporary need. No installation, no permit.<a class="btn" href="#" data-slot="ramp-1">Check the current price on Amazon</a></div>
+<div class="card"><strong>Threshold ramp</strong><br>A short, heavy rubber or aluminum wedge for door thresholds and single small steps — makes a doorway rollable in minutes.<a class="btn" href="#" data-slot="ramp-2">Check the current price on Amazon</a></div>
+<div class="card"><strong>Non-slip tread tape</strong><br>High-grip strips for the ramp surface — important in Canadian winters, when a smooth ramp and a dusting of snow are a bad mix.<a class="btn" href="#" data-slot="ramp-3">Check the current price on Amazon</a></div>
+
+<h2>Common questions</h2>
+<div class="faq">
+<h3>What is the standard slope for a wheelchair ramp?</h3>
+<p>The accessibility standard (ADA, and the model most Canadian codes follow) is 1:12 — for every inch of height, the ramp runs 12 inches (1 foot) long. That's the steepest slope considered safe for a permanent ramp. Gentler slopes like 1:16 or 1:20 are much easier for a manual wheelchair user to climb alone, and easier on anyone pushing.</p>
+<h3>How long a ramp do I need for two steps?</h3>
+<p>Two standard steps are about 14–16 inches of total rise. At 1:12 that's a 14–16 foot ramp — longer than most people expect, which is exactly why measuring first matters. At the gentler 1:20 slope it would be 23–27 feet. A folding portable ramp handles a single low step; two steps usually call for a modular or built ramp with a landing.</p>
+<h3>Do I need a permit for a wheelchair ramp in Canada?</h3>
+<p>It depends on your municipality and on whether the ramp is permanent. Portable and threshold ramps generally don't need one; a permanent structure attached to the house often does, and landings, handrails and maximum slope are set by your provincial building code. A quick call to your city building department before building saves expensive rework.</p>
+</div>
+
+<p class="xlinks"><strong>More free tools:</strong>
+<a href="https://inthe6production.github.io/ice-melt-calculator/">Ice Melt Calculator</a>
+<a href="generator.html">Generator Wattage Calculator</a>
+<a href="heating.html">Heating Cost Calculator</a>
+<a href="lights.html">Christmas Lights Planner</a>
+<a href="index.html">All tools</a></p>
+
+<footer>
+<p class="small">As an Amazon Associate I earn from qualifying purchases.</p>
+<p class="small">All tools on this site are free to use. Results are estimates based on standard ramp ratios — permanent ramps must meet your provincial building code and may require a permit, landings and handrails. When in doubt, have an accessibility contractor confirm the design.</p>
+</footer>
+
+<script>
+function rampLen(riseIn, ratio){ return riseIn*ratio/12; }        // inches of rise × ratio → inches of run → feet
+function angle(ratio){ return Math.atan(1/ratio)*180/Math.PI; }  // slope angle in degrees
+function calc(){
+  const rise=+document.getElementById('r-rise').value||0;
+  const out=document.getElementById('out'), det=document.getElementById('detail');
+  if(rise<=0){ out.textContent='Enter the height you need to climb, in inches.'; det.textContent=''; return; }
+  const l12=rampLen(rise,12), l16=rampLen(rise,16), l20=rampLen(rise,20);
+  out.textContent=`For a ${rise}-inch rise: ${l12.toFixed(1)} ft at 1:12 · ${l16.toFixed(1)} ft at 1:16 · ${l20.toFixed(1)} ft at 1:20`;
+  det.textContent=`1:12 is the standard maximum slope (angle ${angle(12).toFixed(1)}°). 1:16 (${angle(16).toFixed(1)}°) is noticeably easier to push up, and 1:20 (${angle(20).toFixed(1)}°) is the gentlest — the easiest climb, if you have the space. Remember to leave room for a flat landing at the top (and partway up on long runs).`;
+}
+calc();
+</script>
+</body>
+</html>

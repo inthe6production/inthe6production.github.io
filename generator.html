@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Generator Wattage Calculator — What Size Generator Do You Need? (Canada)</title>
+<meta name="description" content="Tick the appliances you want to run during a power outage. Get total running watts, the biggest starting surge, and the right generator size — in plain language.">
+<style>
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;max-width:760px;margin:0 auto;padding:20px;line-height:1.5;color:#14202b}
+.card{border:1px solid #d7dee6;border-radius:12px;padding:16px;margin:16px 0}
+label{display:block;font-weight:600;margin:12px 0 4px}
+input,select{width:100%;padding:10px;border:1px solid #b9c4cf;border-radius:8px;font-size:16px;box-sizing:border-box}
+button{background:#ff9900;border:0;padding:12px 18px;border-radius:8px;font-weight:700;font-size:16px;cursor:pointer;width:100%}
+.small{font-size:13px;color:#52606d}.result{font-size:20px;font-weight:700}
+a.btn{display:block;text-align:center;background:#232f3e;color:#fff;padding:12px;border-radius:8px;text-decoration:none;margin:8px 0}
+a.open{display:block;text-align:center;background:#ff9900;color:#14202b;padding:12px;border-radius:8px;text-decoration:none;font-weight:700;margin:8px 0}
+.disclosure{background:#fff8e1;border:1px solid #f0d48a;padding:10px;border-radius:8px;font-size:13px}
+footer{border-top:1px solid #d7dee6;margin-top:28px;padding-top:14px}
+.check{display:flex;align-items:center;gap:10px;font-weight:400;margin:0;padding:10px 6px;border-bottom:1px solid #eef2f6}
+.check input{width:22px;height:22px;flex:none}
+.check .w{margin-left:auto;font-size:13px;color:#52606d;text-align:right}
+.faq h3{margin:14px 0 4px;font-size:16px}
+.faq p{margin:0 0 10px}
+nav.top{font-size:14px;margin-bottom:6px}
+.xlinks{font-size:14px}
+.xlinks a{margin-right:10px}
+</style>
+</head>
+<body>
+<nav class="top"><a href="index.html">← All tools</a></nav>
+<h1>What size generator do you need?</h1>
+<p>When the power goes out, a generator that's too small stalls the moment your fridge or sump pump kicks on — and one that's too big just burns extra fuel. <strong>Tick everything you want to run at the same time</strong> and get the right size.</p>
+<p class="disclosure">Disclosure: As an Amazon Associate I earn from qualifying purchases. Links below go to Amazon — tap the button to see the current price there.</p>
+
+<div class="card">
+<p><strong>What do you want to keep running?</strong></p>
+<label class="check"><input type="checkbox" id="g0" data-run="150" data-start="1200"> Refrigerator <span class="w">150 W run · 1,200 W start</span></label>
+<label class="check"><input type="checkbox" id="g1" data-run="100" data-start="800"> Freezer <span class="w">100 W run · 800 W start</span></label>
+<label class="check"><input type="checkbox" id="g2" data-run="800" data-start="1300"> Sump pump <span class="w">800 W run · 1,300 W start</span></label>
+<label class="check"><input type="checkbox" id="g3" data-run="300" data-start="600"> Furnace fan (gas furnace) <span class="w">300 W run · 600 W start</span></label>
+<label class="check"><input type="checkbox" id="g4" data-run="1000" data-start="1000"> Microwave <span class="w">1,000 W run · 1,000 W start</span></label>
+<label class="check"><input type="checkbox" id="g5" data-run="200" data-start="200"> Lights (a few rooms, LED) <span class="w">200 W run · 200 W start</span></label>
+<label class="check"><input type="checkbox" id="g6" data-run="150" data-start="150"> TV <span class="w">150 W run · 150 W start</span></label>
+<label class="check"><input type="checkbox" id="g7" data-run="100" data-start="100"> Laptop &amp; phone chargers <span class="w">100 W run · 100 W start</span></label>
+<label class="check"><input type="checkbox" id="g8" data-run="1500" data-start="1500"> Space heater <span class="w">1,500 W run · 1,500 W start</span></label>
+<label class="check"><input type="checkbox" id="g9" data-run="1000" data-start="1500"> Window air conditioner <span class="w">1,000 W run · 1,500 W start</span></label>
+<label class="check"><input type="checkbox" id="g10" data-run="60" data-start="90"> CPAP machine <span class="w">60 W run · 90 W start</span></label>
+<label class="check"><input type="checkbox" id="g11" data-run="4500" data-start="4500"> Electric water heater <span class="w">4,500 W run · 4,500 W start</span></label>
+<button style="margin-top:14px" onclick="calc()">Calculate generator size</button>
+<p class="result" id="out"></p>
+<p id="detail"></p>
+</div>
+
+<h2>What you'd need</h2>
+<p class="small">As an Amazon Associate I earn from qualifying purchases. Prices change — the button shows the current price on Amazon.</p>
+<div class="card"><strong>Portable inverter generator</strong><br>Quiet, fuel-sipping, and safe for laptops, TVs and CPAP machines. The right pick for most homes up to about 4,000 W of need.<a class="btn" href="#" data-slot="generator-1">Check the current price on Amazon</a></div>
+<div class="card"><strong>Dual-fuel generator</strong><br>Runs on gasoline or a propane tank — propane stores for years without going stale, so it's ready when an outage hits.<a class="btn" href="#" data-slot="generator-2">Check the current price on Amazon</a></div>
+<div class="card"><strong>Carbon monoxide alarm</strong><br>Non-negotiable with any generator: generators make carbon monoxide, which you can't see or smell. One battery alarm near the bedrooms.<a class="btn" href="#" data-slot="generator-3">Check the current price on Amazon</a></div>
+
+<h2>Common questions</h2>
+<div class="faq">
+<h3>What's the difference between running watts and starting watts?</h3>
+<p>Running watts are what an appliance uses steadily. Anything with a motor — fridge, freezer, sump pump — needs a short burst of extra power to start, sometimes 3–8× its running watts. Your generator has to survive the biggest burst on top of everything already running, which is exactly what this calculator adds up.</p>
+<h3>How big a generator do I need for a fridge and a furnace?</h3>
+<p>Less than most people think. A fridge (150 W running) plus a gas furnace fan (300 W) plus some lights lands around 1,500–2,500 W once starting surges and headroom are included — a mid-size inverter generator handles it easily. Tick the boxes above for your exact list.</p>
+<h3>Can I run a generator in the garage with the door open?</h3>
+<p><strong>No — never.</strong> Carbon monoxide from a generator can kill in minutes and drifts into the house even with the door open. Run it outside, well away from windows and doors, and keep a CO alarm in the house.</p>
+</div>
+
+<p class="xlinks"><strong>More free tools:</strong>
+<a href="https://inthe6production.github.io/ice-melt-calculator/">Ice Melt Calculator</a>
+<a href="heating.html">Heating Cost Calculator</a>
+<a href="lights.html">Christmas Lights Planner</a>
+<a href="ramp.html">Wheelchair Ramp Calculator</a>
+<a href="index.html">All tools</a></p>
+
+<footer>
+<p class="small">As an Amazon Associate I earn from qualifying purchases.</p>
+<p class="small">All tools on this site are free to use. Results are estimates based on typical appliance wattages — check the rating plate on your own appliances for exact numbers, and have a licensed electrician handle any transfer-switch wiring.</p>
+</footer>
+
+<script>
+const SIZES=[1000,1500,2000,2500,3000,3500,4000,4500,5000,5500,6000,6500,7000,7500,8000,9000,10000,11000,12000,13000,14000,15000,16000,18000,20000];
+function calc(){
+  let run=0, surge=0, any=false;
+  for(let i=0;i<12;i++){
+    const el=document.getElementById('g'+i);
+    if(el && el.checked){
+      any=true;
+      const r=+el.dataset.run, s=+el.dataset.start;
+      run+=r;
+      if(s-r>surge) surge=s-r;
+    }
+  }
+  const out=document.getElementById('out'), det=document.getElementById('detail');
+  if(!any){ out.textContent='Tick at least one appliance above.'; det.textContent=''; return; }
+  const need=run+surge;                 // worst moment: everything running + biggest motor starting
+  const raw=need*1.25;                  // 25% headroom so the generator isn't straining
+  let rec=SIZES[SIZES.length-1];
+  for(const s of SIZES){ if(raw<=s){ rec=s; break; } }
+  let kind;
+  if(rec<=2500) kind='inverter generator — quiet and light';
+  else if(rec<=4500) kind='inverter generator';
+  else if(rec<=8000) kind='dual-fuel generator';
+  else kind='large dual-fuel generator';
+  out.textContent=`You need about a ${rec.toLocaleString('en-CA')} W generator — e.g., a ${rec.toLocaleString('en-CA')} W ${kind}.`;
+  det.textContent=`Your list uses ${run.toLocaleString('en-CA')} W running. The biggest starting surge adds ${surge.toLocaleString('en-CA')} W on top (${need.toLocaleString('en-CA')} W at the worst moment). We add 25% headroom, then round up to a size you can actually buy.`;
+}
+</script>
+</body>
+</html>

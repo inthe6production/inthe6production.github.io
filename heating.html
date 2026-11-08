@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Heating Cost Calculator — What Does a Space Heater Cost to Run? (Ontario)</title>
+<meta name="description" content="Enter your space heater's watts and how long you run it. Get the honest cost per month in dollars at Ontario electricity prices.">
+<style>
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;max-width:760px;margin:0 auto;padding:20px;line-height:1.5;color:#14202b}
+.card{border:1px solid #d7dee6;border-radius:12px;padding:16px;margin:16px 0}
+label{display:block;font-weight:600;margin:12px 0 4px}
+input,select{width:100%;padding:10px;border:1px solid #b9c4cf;border-radius:8px;font-size:16px;box-sizing:border-box}
+button{background:#ff9900;border:0;padding:12px 18px;border-radius:8px;font-weight:700;font-size:16px;cursor:pointer;width:100%}
+.small{font-size:13px;color:#52606d}.result{font-size:20px;font-weight:700}
+a.btn{display:block;text-align:center;background:#232f3e;color:#fff;padding:12px;border-radius:8px;text-decoration:none;margin:8px 0}
+a.open{display:block;text-align:center;background:#ff9900;color:#14202b;padding:12px;border-radius:8px;text-decoration:none;font-weight:700;margin:8px 0}
+.disclosure{background:#fff8e1;border:1px solid #f0d48a;padding:10px;border-radius:8px;font-size:13px}
+footer{border-top:1px solid #d7dee6;margin-top:28px;padding-top:14px}
+.check{display:flex;align-items:center;gap:10px;font-weight:400;margin:0;padding:10px 6px;border-bottom:1px solid #eef2f6}
+.check input{width:22px;height:22px;flex:none}
+.check .w{margin-left:auto;font-size:13px;color:#52606d;text-align:right}
+.faq h3{margin:14px 0 4px;font-size:16px}
+.faq p{margin:0 0 10px}
+nav.top{font-size:14px;margin-bottom:6px}
+.xlinks{font-size:14px}
+.xlinks a{margin-right:10px}
+</style>
+</head>
+<body>
+<nav class="top"><a href="index.html">← All tools</a></nav>
+<h1>What does your space heater cost to run?</h1>
+<p>Space heaters feel cheap because there's no bill at the store — the bill shows up on your hydro statement a month later. <strong>Enter your heater's watts and how you use it</strong> and see the real cost per month, in dollars.</p>
+<p class="disclosure">Disclosure: As an Amazon Associate I earn from qualifying purchases. Links below go to Amazon — tap the button to see the current price there.</p>
+
+<div class="card">
+<label>Heater size (watts)</label>
+<input id="h-watts" type="number" value="1500" min="100" step="50">
+<p class="small">Almost every plug-in space heater is 1,500 W on high — it's printed on the back label. Use 750 if you run yours on low.</p>
+
+<label>Hours per day you run it</label>
+<input id="h-hours" type="number" value="8" min="0" step="1">
+
+<label>Days per month</label>
+<input id="h-days" type="number" value="30" min="1" step="1">
+
+<label>Electricity price (cents per kWh)</label>
+<input id="h-price" type="number" value="13" min="1" step="0.1">
+<p class="small">13¢ is roughly Ontario's average once delivery and fees are in. Check your own hydro bill and change it if yours is different.</p>
+
+<button onclick="calc()">Calculate monthly cost</button>
+<p class="result" id="out"></p>
+<p id="detail"></p>
+<p><strong>Honest tip:</strong> a watt is a watt. A ceramic heater and an oil-filled heater at the same wattage cost exactly the same to run — no plug-in heater is magically cheaper per hour. What actually saves money is sealing drafts and heating a smaller space: a $15 window film kit can save more than a $150 "efficient" heater.</p>
+</div>
+
+<h2>What you'd need</h2>
+<p class="small">As an Amazon Associate I earn from qualifying purchases. Prices change — the button shows the current price on Amazon.</p>
+<div class="card"><strong>Ceramic tower heater</strong><br>Heats up fast and the fan spreads warmth around a room. Best for taking the chill off a living room or office quickly.<a class="btn" href="#" data-slot="heating-1">Check the current price on Amazon</a></div>
+<div class="card"><strong>Oil-filled radiator heater</strong><br>Silent and steady — no fan noise, and it keeps giving off gentle heat after it cycles off. Best for bedrooms.<a class="btn" href="#" data-slot="heating-2">Check the current price on Amazon</a></div>
+<div class="card"><strong>Window insulation film kit</strong><br>The cheap fix that actually lowers the bill: clear film seals drafty windows for the whole winter and comes off clean in spring.<a class="btn" href="#" data-slot="heating-3">Check the current price on Amazon</a></div>
+
+<h2>Common questions</h2>
+<div class="faq">
+<h3>Are ceramic heaters cheaper to run than oil-filled heaters?</h3>
+<p>No. Both turn electricity into heat at the same rate: 1,500 W costs 1,500 W whether the heat comes from a ceramic element, a fan heater, or an oil-filled radiator. They differ in feel — ceramic heats fast and moves air, oil-filled is silent and steady — not in cost per hour.</p>
+<h3>How much does a 1,500 W heater cost to run for a month?</h3>
+<p>At 13¢/kWh, running 8 hours a day for 30 days uses 360 kWh and costs about $46.80. Run it around the clock and the same heater costs about $140 a month. Use the calculator above with your own hours and rate.</p>
+<h3>How can I lower my heating bill without freezing?</h3>
+<p>Seal first: window film, door sweeps and draft stoppers keep the heat you already paid for inside. Then heat the room you're in instead of the whole house, and drop the heater an hour before bed — bedding holds warmth better than air does.</p>
+</div>
+
+<p class="xlinks"><strong>More free tools:</strong>
+<a href="https://inthe6production.github.io/ice-melt-calculator/">Ice Melt Calculator</a>
+<a href="generator.html">Generator Wattage Calculator</a>
+<a href="lights.html">Christmas Lights Planner</a>
+<a href="ramp.html">Wheelchair Ramp Calculator</a>
+<a href="index.html">All tools</a></p>
+
+<footer>
+<p class="small">As an Amazon Associate I earn from qualifying purchases.</p>
+<p class="small">All tools on this site are free to use. Results are estimates — your real cost depends on your hydro rate plan (time-of-use vs. tiered) and how often your heater's thermostat cycles off. Check your own bill for the exact rate.</p>
+</footer>
+
+<script>
+function calc(){
+  const w=+document.getElementById('h-watts').value||0;
+  const h=+document.getElementById('h-hours').value||0;
+  const d=+document.getElementById('h-days').value||0;
+  const p=+document.getElementById('h-price').value||0;
+  const kwh=w/1000*h*d;
+  const cost=kwh*p/100;
+  document.getElementById('out').textContent=`About $${cost.toFixed(2)} per month`;
+  document.getElementById('detail').textContent=`That's ${kwh.toFixed(0)} kWh of electricity (${(w/1000).toFixed(1)} kW × ${h} hours × ${d} days) at ${p}¢ per kWh. Turn the heater off one hour a day and you'd save about $${(cost/Math.max(h,1)).toFixed(2)} a month.`;
+}
+calc();
+</script>
+</body>
+</html>

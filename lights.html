@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Christmas Lights Planner — How Many Strings &amp; Clips Do You Need?</title>
+<meta name="description" content="Enter your roofline length and tree height. Get the number of C9 light strings, clips and mini lights to buy — once, with no second trip to the store.">
+<style>
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;max-width:760px;margin:0 auto;padding:20px;line-height:1.5;color:#14202b}
+.card{border:1px solid #d7dee6;border-radius:12px;padding:16px;margin:16px 0}
+label{display:block;font-weight:600;margin:12px 0 4px}
+input,select{width:100%;padding:10px;border:1px solid #b9c4cf;border-radius:8px;font-size:16px;box-sizing:border-box}
+button{background:#ff9900;border:0;padding:12px 18px;border-radius:8px;font-weight:700;font-size:16px;cursor:pointer;width:100%}
+.small{font-size:13px;color:#52606d}.result{font-size:20px;font-weight:700}
+a.btn{display:block;text-align:center;background:#232f3e;color:#fff;padding:12px;border-radius:8px;text-decoration:none;margin:8px 0}
+a.open{display:block;text-align:center;background:#ff9900;color:#14202b;padding:12px;border-radius:8px;text-decoration:none;font-weight:700;margin:8px 0}
+.disclosure{background:#fff8e1;border:1px solid #f0d48a;padding:10px;border-radius:8px;font-size:13px}
+footer{border-top:1px solid #d7dee6;margin-top:28px;padding-top:14px}
+.check{display:flex;align-items:center;gap:10px;font-weight:400;margin:0;padding:10px 6px;border-bottom:1px solid #eef2f6}
+.check input{width:22px;height:22px;flex:none}
+.check .w{margin-left:auto;font-size:13px;color:#52606d;text-align:right}
+.faq h3{margin:14px 0 4px;font-size:16px}
+.faq p{margin:0 0 10px}
+nav.top{font-size:14px;margin-bottom:6px}
+.xlinks{font-size:14px}
+.xlinks a{margin-right:10px}
+</style>
+</head>
+<body>
+<nav class="top"><a href="index.html">← All tools</a></nav>
+<h1>How many Christmas lights do you need?</h1>
+<p>Every December, somebody's on a ladder discovering they're one string short. <strong>Measure your roofline, tell us your tree height</strong>, and get the full shopping list — strings, clips and mini lights — before you go to the store.</p>
+<p class="disclosure">Disclosure: As an Amazon Associate I earn from qualifying purchases. Links below go to Amazon — tap the button to see the current price there.</p>
+
+<div class="card">
+<label>Roofline length (feet)</label>
+<input id="l-roof" type="number" value="40" min="0" step="1">
+<p class="small">Measure along the eaves where the lights will hang. A typical one-storey front is 35–50 ft. Don't climb up to measure — pace it off on the ground.</p>
+
+<label>Christmas tree height (feet)</label>
+<input id="l-tree" type="number" value="7" min="0" step="0.5">
+<p class="small">Put 0 if you're not decorating a tree this year.</p>
+
+<button onclick="calc()">Plan my lights</button>
+<p class="result" id="out"></p>
+<p id="detail"></p>
+</div>
+
+<h2>What you'd need</h2>
+<p class="small">As an Amazon Associate I earn from qualifying purchases. Prices change — the button shows the current price on Amazon.</p>
+<div class="card"><strong>C9 LED roofline light string</strong><br>The big classic bulbs that read from the street. LED versions use a fraction of the power and the bulbs don't shatter.<a class="btn" href="#" data-slot="lights-1">Check the current price on Amazon</a></div>
+<div class="card"><strong>All-in-one light clips</strong><br>Clip to the shingle edge or the eavestrough — no nails, no staples, and the lights come down in January without a fight.<a class="btn" href="#" data-slot="lights-2">Check the current price on Amazon</a></div>
+<div class="card"><strong>Outdoor timer plug</strong><br>Lights on at dusk, off at bedtime, every night automatically. Saves hydro and you never trudge out in the snow to unplug.<a class="btn" href="#" data-slot="lights-3">Check the current price on Amazon</a></div>
+
+<h2>Common questions</h2>
+<div class="faq">
+<h3>How many lights do I need per foot of Christmas tree?</h3>
+<p>The classic rule of thumb is 100 mini lights for every vertical foot of tree — a 7-foot tree wants about 700 lights for a full, even glow. Prefer a sparser look? Half that still looks good. This planner uses the 100-per-foot standard.</p>
+<h3>How many clips do I need for my roofline?</h3>
+<p>Plan on roughly one clip every 8 inches along a C9 string — about 1.5 clips per foot of roofline. For a 40-foot roofline that's around 60 clips. Buy the bag size above your number; clips are cheap and a few always go missing between seasons.</p>
+<h3>Why add 10% extra length to the roofline?</h3>
+<p>Strings never run perfectly straight: they dip between clips, turn corners, and have to reach the outlet. Adding 10% slack means the last bulb lands at the far corner instead of dangling two feet short — and a spare partial string covers any burnt-out section.</p>
+</div>
+
+<p class="xlinks"><strong>More free tools:</strong>
+<a href="https://inthe6production.github.io/ice-melt-calculator/">Ice Melt Calculator</a>
+<a href="generator.html">Generator Wattage Calculator</a>
+<a href="heating.html">Heating Cost Calculator</a>
+<a href="ramp.html">Wheelchair Ramp Calculator</a>
+<a href="index.html">All tools</a></p>
+
+<footer>
+<p class="small">As an Amazon Associate I earn from qualifying purchases.</p>
+<p class="small">All tools on this site are free to use. Results are estimates based on standard decorating rules of thumb — check the length and bulb count printed on the box before you buy, and follow the manufacturer's limit for how many strings can be connected end to end.</p>
+</footer>
+
+<script>
+function calc(){
+  const roof=+document.getElementById('l-roof').value||0;
+  const tree=+document.getElementById('l-tree').value||0;
+  const out=document.getElementById('out'), det=document.getElementById('detail');
+  if(roof<=0 && tree<=0){ out.textContent='Enter a roofline length or a tree height to plan your lights.'; det.textContent=''; return; }
+  const lines=[];
+  if(roof>0){
+    const need=roof*1.1;                          // 10% slack for dips, corners and reaching the outlet
+    const strings=Math.ceil(need/25);             // standard C9 string = 25 ft
+    const clips=Math.ceil(roof*1.5);              // ~1 clip every 8 inches
+    lines.push(`Roofline (${roof} ft): ${strings} × 25-ft C9 string${strings===1?'':'s'} (covers ${need.toFixed(0)} ft with slack) and about ${clips} clips.`);
+  }
+  if(tree>0){
+    const minis=Math.round(tree*100);             // 100 mini lights per vertical foot
+    const tstrings=Math.ceil(minis/100);          // sold in 100-count strings
+    lines.push(`Tree (${tree} ft): about ${minis.toLocaleString('en-CA')} mini lights — ${tstrings} × 100-count string${tstrings===1?'':'s'}.`);
+  }
+  out.textContent=lines.join(' ');
+  det.textContent='Roofline math: your length plus 10% slack, divided by the standard 25-ft string. Clips: about 1.5 per foot of roofline. Tree math: 100 mini lights per foot of height, sold in 100-count strings.';
+}
+calc();
+</script>
+</body>
+</html>
