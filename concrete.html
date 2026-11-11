@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Concrete Calculator — How Much Concrete Do You Need? (Bags or Ready-Mix)</title>
+<meta name="description" content="Enter your slab size and thickness. Get cubic yards and cubic metres, plus how many 60-lb and 80-lb bags you'd need — and when a ready-mix truck makes more sense.">
+<style>
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;max-width:760px;margin:0 auto;padding:20px;line-height:1.5;color:#14202b}
+.card{border:1px solid #d7dee6;border-radius:12px;padding:16px;margin:16px 0}
+label{display:block;font-weight:600;margin:12px 0 4px}
+input,select{width:100%;padding:10px;border:1px solid #b9c4cf;border-radius:8px;font-size:16px;box-sizing:border-box}
+button{background:#ff9900;border:0;padding:12px 18px;border-radius:8px;font-weight:700;font-size:16px;cursor:pointer;width:100%}
+.small{font-size:13px;color:#52606d}.result{font-size:20px;font-weight:700}
+a.btn{display:block;text-align:center;background:#232f3e;color:#fff;padding:12px;border-radius:8px;text-decoration:none;margin:8px 0}
+a.open{display:block;text-align:center;background:#ff9900;color:#14202b;padding:12px;border-radius:8px;text-decoration:none;font-weight:700;margin:8px 0}
+.disclosure{background:#fff8e1;border:1px solid #f0d48a;padding:10px;border-radius:8px;font-size:13px}
+footer{border-top:1px solid #d7dee6;margin-top:28px;padding-top:14px}
+.check{display:flex;align-items:center;gap:10px;font-weight:400;margin:0;padding:10px 6px;border-bottom:1px solid #eef2f6}
+.check input{width:22px;height:22px;flex:none}
+.check .w{margin-left:auto;font-size:13px;color:#52606d;text-align:right}
+.faq h3{margin:14px 0 4px;font-size:16px}
+.faq p{margin:0 0 10px}
+nav.top{font-size:14px;margin-bottom:6px}
+.xlinks{font-size:14px}
+.xlinks a{margin-right:10px}
+</style>
+</head>
+<body>
+<nav class="top"><a href="index.html">← All tools</a></nav>
+<h1>How much concrete do you need?</h1>
+<p>Bagged mix or a ready-mix truck — guess wrong and you either run short mid-pour or pay for concrete you never use. <strong>Enter your slab size and thickness</strong> and get the real number both ways: yards for a truck, bags for mixing it yourself.</p>
+<p class="disclosure">Disclosure: As an Amazon Associate I earn from qualifying purchases. Links below go to Amazon — tap the button to see the current price there.</p>
+
+<div class="card">
+<label>Length (feet)</label>
+<input id="c-len" type="number" value="10" min="0" step="0.5">
+
+<label>Width (feet)</label>
+<input id="c-wid" type="number" value="10" min="0" step="0.5">
+
+<label>Thickness (inches)</label>
+<input id="c-thick" type="number" value="4" min="0" step="0.5">
+<p class="small">4 inches is the standard for patios, shed pads and most driveways.</p>
+
+<label>Extra for waste (%)</label>
+<input id="c-waste" type="number" value="10" min="0" step="1">
+<p class="small">Spillage, uneven ground and forms that bow a little — 10% is the usual cushion.</p>
+
+<button onclick="calc()">Calculate concrete</button>
+<p class="result" id="out"></p>
+<p id="detail"></p>
+<p><strong>Bags or truck?</strong> <span id="verdict"></span></p>
+<p><strong>Honest tip:</strong> a 60-lb bag only makes 0.45 cubic feet of concrete — one cubic yard is about 60 of them. Most people wildly underestimate the bag count, which is exactly how a Saturday project turns into three trips to the store.</p>
+</div>
+
+<h2>What you'd need</h2>
+<p class="small">As an Amazon Associate I earn from qualifying purchases. Prices change — the button shows the current price on Amazon.</p>
+<div class="card"><strong>Electric concrete mixer</strong><br>Turns a multi-bag job from a wheelbarrow workout into a steady, consistent pour. The sweet spot for jobs in the 10–40 bag range — too big for hand mixing, too small for a truck.<br><em class="small">Amazon link being added — check back shortly</em></div>
+<div class="card"><strong>Magnesium float &amp; trowel set</strong><br>The finishing pair: the float levels and smooths the surface right after the pour, the trowel gives it the final finish. Magnesium floats glide without dragging the surface open.<br><em class="small">Amazon link being added — check back shortly</em></div>
+<div class="card"><strong>Concrete vibrator</strong><br>Settles the mix into corners and knocks out trapped air pockets that cause honeycombing and weak spots — worth it on forms, footings and anything structural.<br><em class="small">Amazon link being added — check back shortly</em></div>
+
+<h2>Common questions</h2>
+<div class="faq">
+<h3>How thick should concrete be — driveway vs. shed pad?</h3>
+<p>Four inches is the standard for both. A shed pad, patio or walkway is fine at 4 inches over a compacted gravel base. A driveway is also 4 inches minimum, but go to 5–6 inches where heavy trucks or RVs park, and use reinforcement (rebar or welded wire mesh) — thickness plus steel is what keeps a driveway from cracking apart.</p>
+<h3>Bags or ready-mix — when does a truck win?</h3>
+<p>Under about one cubic yard, bags are realistic: it's a lot of lifting, but one person with a mixer can do it. Past a yard, the bag count, the mixing time and the risk of cold joints (one batch setting before the next lands) make a ready-mix truck the sane choice — the whole slab pours in minutes, evenly. Keep in mind trucks may charge extra for very small loads, so for tiny jobs bags can still win.</p>
+<h3>Why add a waste percentage?</h3>
+<p>Because the hole is never exactly the size you measured. Ground dips, forms bow outward, some spills, and some stays in the mixer and wheelbarrow. Running short mid-pour is the worst outcome in concrete — a cold joint is a permanent weak line — so 10% extra is cheap insurance.</p>
+</div>
+
+<p class="xlinks"><strong>More free tools:</strong>
+<a href="https://inthe6production.github.io/ice-melt-calculator/">Ice Melt Calculator</a>
+<a href="generator.html">Generator Wattage Calculator</a>
+<a href="heating.html">Heating Cost Calculator</a>
+<a href="outage.html">Medical Device Power Outage Planner</a>
+<a href="lights.html">Christmas Lights Planner</a>
+<a href="ramp.html">Wheelchair Ramp Calculator</a>
+<a href="scooter.html">Mobility Scooter Range Calculator</a>
+<a href="debt.html">Debt Payoff Calculator</a>
+<a href="mulch.html">Mulch Calculator</a>
+<a href="index.html">All tools</a></p>
+
+<footer>
+<p class="small">As an Amazon Associate I earn from qualifying purchases.</p>
+<p class="small">All tools on this site are free to use. Results are estimates — bag yields (0.45 cu ft per 60-lb bag, 0.60 cu ft per 80-lb bag) are the standard figures printed by the major bagged-mix makers, and your real need depends on how true your forms and ground are. Always double-check against your local building code before a structural pour.</p>
+</footer>
+
+<script>
+function computeConcrete(lenFt, widFt, thickIn, wastePct){
+  const volFt3 = lenFt*widFt*(thickIn/12);
+  const w = 1 + (wastePct||0)/100;
+  const yd3 = volFt3/27;
+  const m3 = volFt3*0.0283168466;
+  return {
+    volFt3: volFt3,
+    yd3: yd3, yd3W: yd3*w,
+    m3: m3, m3W: m3*w,
+    bags60: Math.ceil(volFt3/0.45), bags60W: Math.ceil(volFt3*w/0.45),
+    bags80: Math.ceil(volFt3/0.60), bags80W: Math.ceil(volFt3*w/0.60)
+  };
+}
+function calc(){
+  const L=+document.getElementById('c-len').value||0;
+  const W=+document.getElementById('c-wid').value||0;
+  const T=+document.getElementById('c-thick').value||0;
+  const WP=+document.getElementById('c-waste').value||0;
+  const r=computeConcrete(L,W,T,WP);
+  document.getElementById('out').textContent=`About ${r.yd3W.toFixed(2)} cubic yards of concrete (waste included)`;
+  document.getElementById('detail').textContent=`Before waste: ${r.yd3.toFixed(2)} cu yd (${r.m3.toFixed(2)} m³); with ${WP}% waste: ${r.yd3W.toFixed(2)} cu yd (${r.m3W.toFixed(2)} m³). Mixing it yourself? That's ${r.bags60W} × 60-lb bags or ${r.bags80W} × 80-lb bags with waste included — ${r.bags60} × 60-lb or ${r.bags80} × 80-lb before waste.`;
+  document.getElementById('verdict').textContent = r.yd3W<=1
+    ? `Under about a cubic yard, bagged mix is realistic DIY — a mixer and a free Saturday will do it.`
+    : `Past about a cubic yard, a ready-mix truck usually makes more sense — that's a lot of bags to lift, mix and place before the first batch starts to set.`;
+}
+calc();
+</script>
+
+<!-- VIDEO PUMP MEASUREMENT: GoatCounter counter (ACTIVE since 2026-11-10; site code: inthe6production). Privacy-light: no cookies, no fingerprinting. -->
+<script data-goatcounter="https://inthe6production.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

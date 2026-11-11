@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Debt Payoff Calculator — Avalanche vs Snowball, Your Debt-Free Date</title>
+<meta name="description" content="Enter your debts and see your debt-free date, the interest you'll pay with avalanche vs snowball, and how much you save versus paying minimums only.">
+<style>
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;max-width:760px;margin:0 auto;padding:20px;line-height:1.5;color:#14202b}
+.card{border:1px solid #d7dee6;border-radius:12px;padding:16px;margin:16px 0}
+label{display:block;font-weight:600;margin:12px 0 4px}
+input,select{width:100%;padding:10px;border:1px solid #b9c4cf;border-radius:8px;font-size:16px;box-sizing:border-box}
+button{background:#ff9900;border:0;padding:12px 18px;border-radius:8px;font-weight:700;font-size:16px;cursor:pointer;width:100%}
+.small{font-size:13px;color:#52606d}.result{font-size:20px;font-weight:700}
+a.btn{display:block;text-align:center;background:#232f3e;color:#fff;padding:12px;border-radius:8px;text-decoration:none;margin:8px 0}
+a.open{display:block;text-align:center;background:#ff9900;color:#14202b;padding:12px;border-radius:8px;text-decoration:none;font-weight:700;margin:8px 0}
+.disclosure{background:#fff8e1;border:1px solid #f0d48a;padding:10px;border-radius:8px;font-size:13px}
+footer{border-top:1px solid #d7dee6;margin-top:28px;padding-top:14px}
+.check{display:flex;align-items:center;gap:10px;font-weight:400;margin:0;padding:10px 6px;border-bottom:1px solid #eef2f6}
+.check input{width:22px;height:22px;flex:none}
+.check .w{margin-left:auto;font-size:13px;color:#52606d;text-align:right}
+.faq h3{margin:14px 0 4px;font-size:16px}
+.faq p{margin:0 0 10px}
+nav.top{font-size:14px;margin-bottom:6px}
+.xlinks{font-size:14px}
+.xlinks a{margin-right:10px}
+</style>
+</head>
+<body>
+<nav class="top"><a href="index.html">← All tools</a></nav>
+<h1>How fast could you be debt-free?</h1>
+<p>Minimum payments are designed to keep a balance alive for years — that's the lender's plan, not yours. <strong>Enter your debts, add whatever extra you can manage each month</strong>, and see your actual debt-free date — plus what the minimums-only path costs you in interest.</p>
+
+<div class="card">
+<p><strong>Debt 1</strong></p>
+<label>Name</label>
+<input id="d-name1" type="text" value="Card A">
+<label>Balance ($)</label>
+<input id="d-bal1" type="number" value="3000" min="0" step="10">
+<label>APR (%)</label>
+<input id="d-apr1" type="number" value="24" min="0" step="0.1">
+<label>Minimum payment ($/month)</label>
+<input id="d-min1" type="number" value="75" min="0" step="5">
+
+<p><strong>Debt 2</strong></p>
+<label>Name</label>
+<input id="d-name2" type="text" value="Card B">
+<label>Balance ($)</label>
+<input id="d-bal2" type="number" value="2000" min="0" step="10">
+<label>APR (%)</label>
+<input id="d-apr2" type="number" value="18" min="0" step="0.1">
+<label>Minimum payment ($/month)</label>
+<input id="d-min2" type="number" value="50" min="0" step="5">
+
+<p><strong>Debt 3</strong> <span class="small">(optional — leave the balance at 0 if you don't need it)</span></p>
+<label>Name</label>
+<input id="d-name3" type="text" value="">
+<label>Balance ($)</label>
+<input id="d-bal3" type="number" value="0" min="0" step="10">
+<label>APR (%)</label>
+<input id="d-apr3" type="number" value="0" min="0" step="0.1">
+<label>Minimum payment ($/month)</label>
+<input id="d-min3" type="number" value="0" min="0" step="5">
+
+<label>Extra money per month ($)</label>
+<input id="d-extra" type="number" value="25" min="0" step="5">
+<p class="small">On top of all the minimums. Even $25 aimed at one debt makes a real dent — the result below shows exactly how much.</p>
+
+<label>Payoff strategy</label>
+<select id="d-strategy">
+<option value="avalanche">Avalanche — highest interest rate first (cheapest overall)</option>
+<option value="snowball">Snowball — smallest balance first (fastest first win)</option>
+</select>
+
+<button onclick="calc()">See my payoff plan</button>
+<p class="result" id="out"></p>
+<p id="detail"></p>
+<p id="warn"></p>
+<p class="small"><strong>How this works:</strong> the plan holds your total monthly payment steady — every minimum plus your extra — and when a debt is paid off, its payment rolls onto the next target debt. The minimums-only comparison keeps each minimum <strong>fixed at the amount you entered</strong>, pays no extra, and doesn't roll anything over when a debt is paid off. Real card minimums usually shrink as the balance falls, which makes the real minimums-only path even slower than the comparison shown.</p>
+</div>
+
+<p><strong>A different bill, same idea: know your number.</strong> The same approach works on household bills — see what your space heater really costs to run with the <a href="heating.html">Heating Cost Calculator</a>.</p>
+
+<h2>Common questions</h2>
+<div class="faq">
+<h3>Avalanche or snowball — which is actually better?</h3>
+<p>On paper, avalanche (highest APR first) always costs the least interest, because every extra dollar kills the most expensive debt first. Snowball (smallest balance first) usually costs a little more but gives you a fully paid-off debt sooner, and that early win is what keeps some people going. The calculator shows the exact dollar difference on your own debts — it's often smaller than you'd expect, so pick the one you'll actually stick with.</p>
+<h3>Why is paying only the minimums so slow?</h3>
+<p>Because a typical minimum is set to barely beat the month's interest plus a sliver of principal. Early on, most of your payment is interest, so the balance barely moves — and the lender collects interest for years. Two ordinary cards paid on minimums alone can drag on for the better part of a decade.</p>
+<h3>I can only add a little extra. Is it even worth it?</h3>
+<p>Yes — extra money is aimed entirely at one target debt, so every extra dollar stops accruing interest from that month on, and once that debt is gone its whole payment rolls onto the next one. On typical card debts, an extra $25 a month alone can cut the interest bill by hundreds of dollars and finish months earlier. Try it above: change the extra amount and watch the date move.</p>
+</div>
+
+<p class="xlinks"><strong>More free tools:</strong>
+<a href="https://inthe6production.github.io/ice-melt-calculator/">Ice Melt Calculator</a>
+<a href="generator.html">Generator Wattage Calculator</a>
+<a href="heating.html">Heating Cost Calculator</a>
+<a href="outage.html">Medical Device Power Outage Planner</a>
+<a href="lights.html">Christmas Lights Planner</a>
+<a href="ramp.html">Wheelchair Ramp Calculator</a>
+<a href="scooter.html">Mobility Scooter Range Calculator</a>
+<a href="concrete.html">Concrete Calculator</a>
+<a href="mulch.html">Mulch Calculator</a>
+<a href="index.html">All tools</a></p>
+
+<footer>
+<p class="small">As an Amazon Associate I earn from qualifying purchases.</p>
+<p class="small">Estimates for education only — not financial advice. All tools on this site are free to use. This calculator assumes fixed APRs, fixed minimum payments at the amounts you entered, and no new charges on the debts; real statements vary. If debt payments are a struggle, a non-profit credit counsellor can review your situation for free.</p>
+</footer>
+
+<script>
+function simDebts(debts, extra, strategy){
+  const ds = debts.map(d=>({name:d.name, bal:d.bal, apr:d.apr, min:d.min}));
+  const budget0 = ds.reduce((s,d)=>s+d.min,0) + extra;
+  let interest = 0, months = 0;
+  const alive = d => d.bal > 0.005;
+  while(ds.some(alive) && months < 600){
+    months++;
+    for(const d of ds){ if(d.bal>0){ const i=d.bal*d.apr/1200; d.bal+=i; interest+=i; } }
+    let budget = budget0;
+    for(const d of ds){ if(d.bal>0 && budget>0){ const pay=Math.min(d.min, d.bal, budget); d.bal-=pay; budget-=pay; } }
+    while(budget > 0.005 && ds.some(alive)){
+      let t=null;
+      for(const d of ds){
+        if(!alive(d)) continue;
+        if(!t){ t=d; continue; }
+        if(strategy==='avalanche' ? d.apr>t.apr : d.bal<t.bal) t=d;
+      }
+      if(!t) break;
+      const pay=Math.min(budget, t.bal); t.bal-=pay; budget-=pay;
+    }
+  }
+  return {interest:interest, months:months, cleared:!ds.some(alive)};
+}
+function simBaseline(debts){
+  const ds = debts.map(d=>({name:d.name, bal:d.bal, apr:d.apr, min:d.min}));
+  let interest = 0, months = 0;
+  const alive = d => d.bal > 0.005;
+  while(ds.some(alive) && months < 600){
+    months++;
+    for(const d of ds){ if(d.bal>0){ const i=d.bal*d.apr/1200; d.bal+=i; interest+=i; } }
+    for(const d of ds){ if(d.bal>0){ const pay=Math.min(d.min, d.bal); d.bal-=pay; } }
+  }
+  return {interest:interest, months:months, cleared:!ds.some(alive)};
+}
+function money(n){ return '$'+n.toLocaleString('en-CA',{minimumFractionDigits:2, maximumFractionDigits:2}); }
+function calc(){
+  const debts=[];
+  for(let i=1;i<=3;i++){
+    const bal=+document.getElementById('d-bal'+i).value||0;
+    const apr=+document.getElementById('d-apr'+i).value||0;
+    const min=+document.getElementById('d-min'+i).value||0;
+    const nm=(document.getElementById('d-name'+i).value||'').trim()||('Debt '+i);
+    if(bal>0) debts.push({name:nm, bal:bal, apr:apr, min:min});
+  }
+  const extra=+document.getElementById('d-extra').value||0;
+  const strategy=document.getElementById('d-strategy').value;
+  const out=document.getElementById('out');
+  const detail=document.getElementById('detail');
+  const warn=document.getElementById('warn');
+  out.textContent=''; detail.textContent=''; warn.textContent='';
+  if(!debts.length){ out.textContent='Enter at least one debt to see your payoff plan.'; return; }
+  const strat=simDebts(debts, extra, strategy);
+  if(!strat.cleared){
+    warn.textContent='⚠️ At these payments the balance never comes down — a payment has to cover at least the monthly interest (balance × APR ÷ 12) or the debt grows instead of shrinking. Raise the extra amount or check the minimums, then try again.';
+    return;
+  }
+  const base=simBaseline(debts);
+  const other=simDebts(debts, extra, strategy==='avalanche'?'snowball':'avalanche');
+  const monthlyTotal=debts.reduce((s,d)=>s+d.min,0)+extra;
+  const when=new Date(); when.setMonth(when.getMonth()+strat.months);
+  const whenStr=when.toLocaleDateString('en-CA',{month:'long', year:'numeric'});
+  const av = strategy==='avalanche'?strat:other;
+  const sn = strategy==='avalanche'?other:strat;
+  const diff = Math.abs(Math.round(av.interest*100) - Math.round(sn.interest*100))/100;
+  let diffLine;
+  if(diff < 0.005) diffLine='Avalanche and snowball cost exactly the same interest on these debts.';
+  else if(av.interest < sn.interest) diffLine=`Avalanche beats snowball here by ${money(diff)} in interest.`;
+  else diffLine=`Snowball beats avalanche here by ${money(diff)} in interest.`;
+  if(!base.cleared){
+    out.textContent=`Debt-free in ${strat.months} months — on minimums alone, these debts never get paid off`;
+    detail.textContent=`With the ${strategy} plan (${money(monthlyTotal)} a month, every month): debt-free around ${whenStr}, with ${money(strat.interest)} total interest. On minimums alone at the amounts entered, at least one balance never comes down — its minimum doesn't cover the monthly interest. ${diffLine}`;
+  } else {
+    const save=(Math.round(base.interest*100) - Math.round(strat.interest*100))/100;
+    const sooner=base.months-strat.months;
+    out.textContent=`You save ${money(save)} and finish ${sooner} month${sooner===1?'':'s'} sooner`;
+    detail.textContent=`With the ${strategy} plan (${money(monthlyTotal)} a month, every month): debt-free in ${strat.months} months — around ${whenStr} — with ${money(strat.interest)} total interest. Paying only the minimums, with no extra and no rolling: ${base.months} months and ${money(base.interest)} in interest. ${diffLine}`;
+  }
+  const lowMin=debts.filter(d=>d.apr>0 && d.min <= d.bal*d.apr/1200);
+  if(lowMin.length){
+    warn.textContent='Heads-up: the minimum on '+lowMin.map(d=>d.name).join(', ')+' doesn\'t cover its monthly interest at today\'s balance — left on minimums alone, that balance would grow. The plan above still works because extra money lands on the debts, but it\'s the first thing to fix in real life.';
+  }
+}
+calc();
+</script>
+
+<!-- VIDEO PUMP MEASUREMENT: GoatCounter counter (ACTIVE since 2026-11-10; site code: inthe6production). Privacy-light: no cookies, no fingerprinting. -->
+<script data-goatcounter="https://inthe6production.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

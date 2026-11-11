@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mulch Calculator — How Much Mulch Do You Need? (Bags or Bulk)</title>
+<meta name="description" content="Enter your garden bed size and depth. Get cubic yards for bulk delivery or the number of 2-cu-ft and 3-cu-ft bags, with waste included.">
+<style>
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;max-width:760px;margin:0 auto;padding:20px;line-height:1.5;color:#14202b}
+.card{border:1px solid #d7dee6;border-radius:12px;padding:16px;margin:16px 0}
+label{display:block;font-weight:600;margin:12px 0 4px}
+input,select{width:100%;padding:10px;border:1px solid #b9c4cf;border-radius:8px;font-size:16px;box-sizing:border-box}
+button{background:#ff9900;border:0;padding:12px 18px;border-radius:8px;font-weight:700;font-size:16px;cursor:pointer;width:100%}
+.small{font-size:13px;color:#52606d}.result{font-size:20px;font-weight:700}
+a.btn{display:block;text-align:center;background:#232f3e;color:#fff;padding:12px;border-radius:8px;text-decoration:none;margin:8px 0}
+a.open{display:block;text-align:center;background:#ff9900;color:#14202b;padding:12px;border-radius:8px;text-decoration:none;font-weight:700;margin:8px 0}
+.disclosure{background:#fff8e1;border:1px solid #f0d48a;padding:10px;border-radius:8px;font-size:13px}
+footer{border-top:1px solid #d7dee6;margin-top:28px;padding-top:14px}
+.check{display:flex;align-items:center;gap:10px;font-weight:400;margin:0;padding:10px 6px;border-bottom:1px solid #eef2f6}
+.check input{width:22px;height:22px;flex:none}
+.check .w{margin-left:auto;font-size:13px;color:#52606d;text-align:right}
+.faq h3{margin:14px 0 4px;font-size:16px}
+.faq p{margin:0 0 10px}
+nav.top{font-size:14px;margin-bottom:6px}
+.xlinks{font-size:14px}
+.xlinks a{margin-right:10px}
+</style>
+</head>
+<body>
+<nav class="top"><a href="index.html">← All tools</a></nav>
+<h1>How much mulch do you need?</h1>
+<p>Too little mulch and the weeds win by July; too much and you're storing soggy bags all winter. <strong>Enter your bed size and how deep you want it</strong> and get the number both ways: cubic yards for a bulk delivery, or the exact bag count.</p>
+<p class="disclosure">Disclosure: As an Amazon Associate I earn from qualifying purchases. Links below go to Amazon — tap the button to see the current price there.</p>
+
+<div class="card">
+<label>Bed length (feet)</label>
+<input id="m-len" type="number" value="10" min="0" step="0.5">
+
+<label>Bed width (feet)</label>
+<input id="m-wid" type="number" value="10" min="0" step="0.5">
+
+<label>Depth (inches)</label>
+<input id="m-depth" type="number" value="3" min="0" step="0.5">
+<p class="small">3 inches is the standard for weed suppression. Odd-shaped beds? Measure them as rough rectangles and add the areas together — or just bump the waste up.</p>
+
+<label>Extra for waste (%)</label>
+<input id="m-waste" type="number" value="10" min="0" step="1">
+<p class="small">Mulch settles and compacts after the first few rains — 10% covers the settling and the spillage.</p>
+
+<button onclick="calc()">Calculate mulch</button>
+<p class="result" id="out"></p>
+<p id="detail"></p>
+<p><strong>Bags or bulk?</strong> <span id="verdict"></span></p>
+<p><strong>Honest tip:</strong> one cubic yard of mulch is about fourteen 2-cu-ft bags. If your number comes out past two or three yards, you're not looking at a few bags — you're looking at a small mountain of them, and bulk delivery starts to win on effort alone.</p>
+</div>
+
+<h2>What you'd need</h2>
+<p class="small">As an Amazon Associate I earn from qualifying purchases. Prices change — the button shows the current price on Amazon.</p>
+<div class="card"><strong>Landscape fabric</strong><br>Lay it under the mulch in beds you don't replant every year — it blocks weeds from below while the mulch blocks them from above. Skip it in beds you dig and replant often; there it just gets in the way.<br><em class="small">Amazon link being added — check back shortly</em></div>
+<div class="card"><strong>Mulch colourant / dye (refresh faded mulch)</strong><br>Coloured mulch fades to grey-brown in a season or two. A spray-on colourant brings back the fresh dark or red look in an afternoon — without stripping and replacing mulch that's still doing its job.<br><em class="small">Amazon link being added — check back shortly</em></div>
+<div class="card"><strong>Garden edging kit</strong><br>A clean edge is what keeps mulch in the bed and out of the lawn, and keeps grass from creeping in. No-dig edging kits go in with a mallet — no trench required.<br><em class="small">Amazon link being added — check back shortly</em></div>
+
+<h2>Common questions</h2>
+<div class="faq">
+<h3>How deep should mulch be for weed suppression?</h3>
+<p>Three inches is the standard: enough to block the light weed seeds need to sprout and to hold soil moisture through a dry week. Two inches is a bare minimum that weeds punch through by midsummer. Don't go past about 4 inches — a very deep layer can shed water instead of soaking it in, and piled against tree trunks or stems it traps moisture and invites rot. Keep it a few inches away from trunks and crowns.</p>
+<h3>Bags or bulk — where's the break-even?</h3>
+<p>Around 2–3 cubic yards. Below a yard, bags are easy: no driveway pile, no wheelbarrow marathon, and you can do one bed at a time. But a cubic yard is roughly fourteen 2-cu-ft bags, so a 3-yard job is 40 bags to load, haul and open — that's where a bulk delivery dumped in the driveway starts to win, especially if a supplier's delivery fee replaces a second trip.</p>
+<h3>When should I lay mulch — and what about faded coloured mulch?</h3>
+<p>Spring, once the soil has warmed and you've weeded and edged the beds — mulch locks in whatever is underneath, weeds included. A thinner top-up in fall helps insulate perennials. And if coloured mulch has faded but is still a good depth, don't replace it: a mulch colourant spray refreshes the colour in place for a fraction of the work (see the slot above).</p>
+</div>
+
+<p class="xlinks"><strong>More free tools:</strong>
+<a href="https://inthe6production.github.io/ice-melt-calculator/">Ice Melt Calculator</a>
+<a href="generator.html">Generator Wattage Calculator</a>
+<a href="heating.html">Heating Cost Calculator</a>
+<a href="outage.html">Medical Device Power Outage Planner</a>
+<a href="lights.html">Christmas Lights Planner</a>
+<a href="ramp.html">Wheelchair Ramp Calculator</a>
+<a href="scooter.html">Mobility Scooter Range Calculator</a>
+<a href="concrete.html">Concrete Calculator</a>
+<a href="debt.html">Debt Payoff Calculator</a>
+<a href="index.html">All tools</a></p>
+
+<footer>
+<p class="small">As an Amazon Associate I earn from qualifying purchases.</p>
+<p class="small">All tools on this site are free to use. Results are estimates — real beds are rarely perfect rectangles, and mulch settles after watering, so if you're between two numbers, take the bigger one.</p>
+</footer>
+
+<script>
+function computeMulch(lenFt, widFt, depthIn, wastePct){
+  const volFt3 = lenFt*widFt*(depthIn/12);
+  const w = 1 + (wastePct||0)/100;
+  const yd3 = volFt3/27;
+  return {
+    volFt3: volFt3,
+    yd3: yd3, yd3W: yd3*w,
+    bags2: Math.ceil(volFt3/2), bags2W: Math.ceil(volFt3*w/2),
+    bags3: Math.ceil(volFt3/3), bags3W: Math.ceil(volFt3*w/3)
+  };
+}
+function calc(){
+  const L=+document.getElementById('m-len').value||0;
+  const W=+document.getElementById('m-wid').value||0;
+  const D=+document.getElementById('m-depth').value||0;
+  const WP=+document.getElementById('m-waste').value||0;
+  const r=computeMulch(L,W,D,WP);
+  document.getElementById('out').textContent=`About ${r.yd3W.toFixed(2)} cubic yards of mulch (waste included)`;
+  document.getElementById('detail').textContent=`Before waste: ${r.yd3.toFixed(2)} cu yd. In bags with ${WP}% waste included: ${r.bags2W} × 2-cu-ft bags or ${r.bags3W} × 3-cu-ft bags — before waste that's ${r.bags2} × 2-cu-ft or ${r.bags3} × 3-cu-ft.`;
+  document.getElementById('verdict').textContent = r.yd3W<=2
+    ? `Bags are the easy route at this size — manageable in one trip, and you can stop exactly where the bed ends.`
+    : (r.yd3W<=3
+    ? `You're at the tipping point: bags still work, but that's a lot of bags to haul — a bulk delivery starts to make sense here.`
+    : `Bulk delivery usually wins past 2–3 cubic yards — have it dumped close to the beds and wheelbarrow from there.`);
+}
+calc();
+</script>
+
+<!-- VIDEO PUMP MEASUREMENT: GoatCounter counter (ACTIVE since 2026-11-10; site code: inthe6production). Privacy-light: no cookies, no fingerprinting. -->
+<script data-goatcounter="https://inthe6production.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
