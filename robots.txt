@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://inthe6production.github.io/sitemap.xml
