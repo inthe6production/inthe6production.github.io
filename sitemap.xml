@@ -76,6 +76,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://inthe6production.github.io/medical-appointment-planner.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://inthe6production.github.io/nostalgia-quiz.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
