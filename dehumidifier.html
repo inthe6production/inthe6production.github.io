@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dehumidifier Size Calculator — What Size Dehumidifier Do I Need? (Canada)</title>
+<meta name="description" content="Enter your basement or room size and how damp it feels, and get the dehumidifier capacity you need in pints per day — using the standard AHAM sizing guide. Plain language, no sign-up.">
+<style>
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;max-width:760px;margin:0 auto;padding:20px;line-height:1.5;color:#14202b}
+.card{border:1px solid #d7dee6;border-radius:12px;padding:16px;margin:16px 0}
+label{display:block;font-weight:600;margin:12px 0 4px}
+input,select{width:100%;padding:10px;border:1px solid #b9c4cf;border-radius:8px;font-size:16px;box-sizing:border-box}
+button{background:#ff9900;border:0;padding:12px 18px;border-radius:8px;font-weight:700;font-size:16px;cursor:pointer;width:100%}
+.small{font-size:13px;color:#52606d}.result{font-size:20px;font-weight:700}
+a.btn{display:block;text-align:center;background:#232f3e;color:#fff;padding:12px;border-radius:8px;text-decoration:none;margin:8px 0}
+a.open{display:block;text-align:center;background:#ff9900;color:#14202b;padding:12px;border-radius:8px;text-decoration:none;font-weight:700;margin:8px 0}
+.disclosure{background:#fff8e1;border:1px solid #f0d48a;padding:10px;border-radius:8px;font-size:13px}
+footer{border-top:1px solid #d7dee6;margin-top:28px;padding-top:14px}
+.check{display:flex;align-items:center;gap:10px;font-weight:400;margin:0;padding:10px 6px;border-bottom:1px solid #eef2f6}
+.check input{width:22px;height:22px;flex:none}
+.check .w{margin-left:auto;font-size:13px;color:#52606d;text-align:right}
+.faq h3{margin:14px 0 4px;font-size:16px}
+.faq p{margin:0 0 10px}
+nav.top{font-size:14px;margin-bottom:6px}
+.xlinks{font-size:14px}
+.xlinks a{margin-right:10px}
+table.size{border-collapse:collapse;width:100%;font-size:15px;margin:10px 0}
+table.size th,table.size td{border:1px solid #d7dee6;padding:7px;text-align:center}
+table.size th{background:#eef2f6}
+</style>
+</head>
+<body>
+<nav class="top"><a href="index.html">← All tools</a></nav>
+<h1>What size dehumidifier do you need?</h1>
+<p>A dehumidifier that's too small runs all day and never catches up — the basement still smells musty and the bucket is always full. One that's too big costs more than it needs to. <strong>Enter the size of the space and how damp it feels</strong>, and get the right capacity in pints per day, using the standard AHAM sizing guide.</p>
+<p class="disclosure">Disclosure: As an Amazon Associate I earn from qualifying purchases. Links below go to Amazon — tap the button to see the current price there.</p>
+
+<div class="card">
+<label for="sqft">Size of the space (square feet)</label>
+<input type="number" id="sqft" min="100" max="10000" step="50" value="1200">
+<label for="damp">How damp does it feel?</label>
+<select id="damp">
+<option value="moderately">Moderately damp — a little musty on humid days</option>
+<option value="very" selected>Very damp — musty smell, feels damp to the touch</option>
+<option value="wet">Wet — condensation on pipes and windows, damp spots on walls</option>
+<option value="extremely">Extremely wet — standing water or puddles after rain</option>
+</select>
+<button style="margin-top:14px" onclick="calc()">Calculate dehumidifier size</button>
+<p class="result" id="out"></p>
+<p id="detail"></p>
+</div>
+
+<h2>The sizing guide this calculator uses</h2>
+<p>Recommended capacity in pints per day (standard AHAM guide). Find your space size across the top and your dampness down the side:</p>
+<table class="size">
+<tr><th>How damp?</th><th>500 sq ft</th><th>1,000</th><th>1,500</th><th>2,000</th><th>2,500</th><th>3,000</th></tr>
+<tr><th>Moderately damp</th><td>20</td><td>25</td><td>30</td><td>35</td><td>40</td><td>50</td></tr>
+<tr><th>Very damp</th><td>25</td><td>30</td><td>35</td><td>40</td><td>50</td><td>60</td></tr>
+<tr><th>Wet</th><td>30</td><td>35</td><td>40</td><td>50</td><td>60</td><td>70</td></tr>
+<tr><th>Extremely wet</th><td>35</td><td>40</td><td>50</td><td>60</td><td>70</td><td>80</td></tr>
+</table>
+<p class="small">For spaces over 3,000 sq ft, the guide adds roughly 5 pints for every extra 500 sq ft. One caution about labels: since 2019, dehumidifiers are rated under a cooler, drier test, so a modern "50-pint" machine does the work of an older "70-pint" one. Compare today's pint numbers to today's — this calculator uses the modern scale.</p>
+
+<h2>A dehumidifier in this size class</h2>
+<p class="small">As an Amazon Associate I earn from qualifying purchases. Prices change — the button shows the current price on Amazon.</p>
+<div class="card"><strong>Danby 50-Pint Dehumidifier with Pump (DDR050BJP2WDB)</strong><br>A Canadian company's big basement unit: 50 pints a day, and the built-in pump pushes water up to a sink or out a window — no floor drain needed and no bucket to empty. The right class for most damp basements in the 1,500–3,000 sq ft range.<a class="btn" href="https://www.amazon.ca/dp/B0CV8S1WDJ?tag=inthesixprodu-20" data-slot="dehumidifier-1">Check the current price on Amazon</a></div>
+<!-- DRAFT NOTE (Nov 18, 2026): two slots intentionally left empty.
+     1) Smaller-class unit (30 pints and under): no Amazon.ca listing could be rating-verified — do not fill without verification.
+     2) The Danby listing above is identity-verified on Amazon.ca; its Amazon.ca star rating could not be read directly (Amazon blocks the read) — Dave to confirm the rating in the Amazon app before publishing. Same-model Costco rating: 4.3 stars. -->
+
+<h2>Common questions</h2>
+<div class="faq">
+<h3>Can you show me an example?</h3>
+<p>Say your basement is 1,200 square feet and feels very damp — musty, cool, damp to the touch. On the guide, 1,200 sq ft rounds up to the 1,500 column, and the "very damp" row reads <strong>35 pints per day</strong>. So you'd shop for a machine rated at least 35 pints — in practice, the common 50-pint class gives you comfortable headroom.</p>
+<h3>What humidity should I aim for?</h3>
+<p>Between 30% and 50% relative humidity. Below 30% feels dry and can irritate sinuses; above 50% invites mould and dust mites. Most dehumidifiers have a built-in humidistat — set it to 45% and let the machine cycle on its own.</p>
+<h3>Bucket, hose, or pump — which drainage do I want?</h3>
+<p>A bucket is fine for a small unit you can check daily. A gravity hose needs a floor drain lower than the machine. A built-in pump is the flexible option: it can push water up into a sink or out a window, which is why pump models suit finished basements without a floor drain.</p>
+<h3>Will a dehumidifier fix a wet basement?</h3>
+<p>It manages moisture in the air — it won't stop water coming through the foundation. If you have standing water after rain, deal with the source first (eavestroughs, grading, cracks), then let the dehumidifier keep the air dry.</p>
+</div>
+
+<p class="xlinks"><strong>More free tools:</strong>
+<a href="https://inthe6production.github.io/ice-melt-calculator/">Ice Melt Calculator</a>
+<a href="generator.html">Generator Wattage Calculator</a>
+<a href="heating.html">Heating Cost Calculator</a>
+<a href="concrete.html">Concrete Calculator</a>
+<a href="mulch.html">Mulch Calculator</a>
+<a href="index.html">All tools</a></p>
+
+<footer>
+<p class="small">As an Amazon Associate I earn from qualifying purchases.</p>
+<p class="small">All tools on this site are free to use. Results follow the standard AHAM sizing guide and are estimates — very cold basements (below about 18°C) dry more slowly, and a hygrometer reading beats a guess every time.</p>
+</footer>
+
+<script>
+const AHAM={
+  moderately:[20,25,30,35,40,50],
+  very:[25,30,35,40,50,60],
+  wet:[30,35,40,50,60,70],
+  extremely:[35,40,50,60,70,80]
+};
+const BANDS=[500,1000,1500,2000,2500,3000];
+function calc(){
+  const sqft=+document.getElementById('sqft').value;
+  const damp=document.getElementById('damp').value;
+  const out=document.getElementById('out'), det=document.getElementById('detail');
+  if(!sqft || sqft<50){ out.textContent='Enter the size of the space in square feet.'; det.textContent=''; return; }
+  let pints;
+  if(sqft>3000){ pints=AHAM[damp][5] + 5*Math.round((sqft-3000)/500); }
+  else { let i=BANDS.findIndex(b=>sqft<=b); pints=AHAM[damp][i]; }
+  out.textContent='You need a dehumidifier rated at about '+pints+' pints per day.';
+  det.textContent='That comes from the AHAM guide for a '+sqft.toLocaleString('en-CA')+' sq ft space at your dampness level. If your number lands between two common sizes, choose the larger — an oversized unit cycles off and holds the humidity steadier, while an undersized one runs flat-out and still loses.';
+}
+</script>
+
+<!-- VIDEO PUMP MEASUREMENT: GoatCounter counter (ACTIVE since 2026-11-10; site code: inthe6production). Privacy-light: no cookies, no fingerprinting. -->
+<script data-goatcounter="https://inthe6production.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

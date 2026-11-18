@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Space Heater Size Calculator — How Many Watts Do You Need? (Canada)</title>
+<meta name="description" content="Enter your room size and insulation and get the space heater wattage you need — about 10 watts per square foot, adjusted for how well the room holds heat. Plain language, no sign-up.">
+<style>
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;max-width:760px;margin:0 auto;padding:20px;line-height:1.5;color:#14202b}
+.card{border:1px solid #d7dee6;border-radius:12px;padding:16px;margin:16px 0}
+label{display:block;font-weight:600;margin:12px 0 4px}
+input,select{width:100%;padding:10px;border:1px solid #b9c4cf;border-radius:8px;font-size:16px;box-sizing:border-box}
+button{background:#ff9900;border:0;padding:12px 18px;border-radius:8px;font-weight:700;font-size:16px;cursor:pointer;width:100%}
+.small{font-size:13px;color:#52606d}.result{font-size:20px;font-weight:700}
+a.btn{display:block;text-align:center;background:#232f3e;color:#fff;padding:12px;border-radius:8px;text-decoration:none;margin:8px 0}
+a.open{display:block;text-align:center;background:#ff9900;color:#14202b;padding:12px;border-radius:8px;text-decoration:none;font-weight:700;margin:8px 0}
+.disclosure{background:#fff8e1;border:1px solid #f0d48a;padding:10px;border-radius:8px;font-size:13px}
+footer{border-top:1px solid #d7dee6;margin-top:28px;padding-top:14px}
+.check{display:flex;align-items:center;gap:10px;font-weight:400;margin:0;padding:10px 6px;border-bottom:1px solid #eef2f6}
+.check input{width:22px;height:22px;flex:none}
+.check .w{margin-left:auto;font-size:13px;color:#52606d;text-align:right}
+.faq h3{margin:14px 0 4px;font-size:16px}
+.faq p{margin:0 0 10px}
+nav.top{font-size:14px;margin-bottom:6px}
+.xlinks{font-size:14px}
+.xlinks a{margin-right:10px}
+</style>
+</head>
+<body>
+<nav class="top"><a href="index.html">← All tools</a></nav>
+<h1>What size space heater do you need?</h1>
+<p>The rule of thumb is <strong>10 watts of heat for every square foot</strong> of room — adjusted up for a drafty room and down for a well-insulated one. Enter your room size and how well it holds heat, and get the wattage to shop for (and the same answer in BTU).</p>
+<p class="disclosure">Disclosure: As an Amazon Associate I earn from qualifying purchases. Links below go to Amazon — tap the button to see the current price there.</p>
+
+<div class="card">
+<label for="sqft">Room size (square feet)</label>
+<input type="number" id="sqft" min="30" max="1500" step="10" value="150">
+<label for="insul">How well does the room hold heat?</label>
+<select id="insul">
+<option value="poor">Poorly — older home, drafts, single-pane windows</option>
+<option value="average" selected>Average — typical insulation, no obvious drafts</option>
+<option value="good">Well — newer or renovated, tight windows and doors</option>
+</select>
+<button style="margin-top:14px" onclick="calc()">Calculate heater size</button>
+<p class="result" id="out"></p>
+<p id="detail"></p>
+</div>
+
+<h2>Space heaters in this class</h2>
+<p class="small">As an Amazon Associate I earn from qualifying purchases. Prices change — the button shows the current price on Amazon. Nearly all plug-in space heaters top out at 1,500 watts — that's the most a normal household circuit can safely give one appliance — so for most rooms the real choice is features: a thermostat, a timer, and tip-over protection.</p>
+<div class="card"><strong>DREO Space Heater — 1,500 W, oscillating, with remote</strong><br>A compact 1,500 W ceramic heater with a digital thermostat, 12-hour timer, 70° oscillation and both overheat and tip-over protection. On its lower settings it covers the smaller-room answers too — one machine for most of the numbers this calculator gives.<a class="btn" href="https://www.amazon.ca/dp/B0BCJ2M11H?tag=inthesixprodu-20" data-slot="heater-1">Check the current price on Amazon</a></div>
+<div class="card"><strong>Lasko Oscillating Digital Ceramic Tower Heater (755320) — 1,500 W</strong><br>The long-running 23-inch tower: two quiet heat settings, an adjustable thermostat, a remote, and an 8-hour timer. A proven pick for bedrooms and living rooms in the 150 sq ft range.<a class="btn" href="https://www.amazon.ca/dp/B000TTV2QS?tag=inthesixprodu-20" data-slot="heater-2">Check the current price on Amazon</a></div>
+<!-- DRAFT NOTE (Nov 18, 2026): the DREO listing above is fully verified on Amazon.ca (4.5 stars, ~28,000 ratings). The Lasko 755320 listing is identity-verified on Amazon.ca, but its current Amazon.ca star rating could not be read directly (Amazon blocks the read) — Dave to confirm the rating in the Amazon app before publishing. -->
+
+<h2>Common questions</h2>
+<div class="faq">
+<h3>Can you show me an example?</h3>
+<p>Say the room is 150 square feet with average insulation. At 10 watts per square foot, that's <strong>1,500 watts</strong> — about 5,118 BTU per hour — which is exactly the standard full-size plug-in heater. A drafty 200 sq ft room, by the same math, would ask for 2,500 watts: more than any single plug-in heater should give, so the honest answer there is a heater for the corner you sit in, plus fixing the drafts.</p>
+<h3>Why do all the heaters say 1,500 watts?</h3>
+<p>Because that's the ceiling for one appliance on a household circuit. Heater shopping isn't really about wattage — it's about the thermostat holding a steady temperature, the safety shut-offs, and how quietly the fan runs. For a smaller room, a 1,500 W heater on its low setting (often 750–900 W) is perfectly fine.</p>
+<h3>What does it cost to run?</h3>
+<p>Try our <a href="heating.html">Heating Cost Calculator</a> — enter 1,500 watts and your Ontario electricity rate and it gives you the honest per-month number. Short version: a space heater is cheap for one chilly room and expensive as whole-house heat.</p>
+<h3>Any safety rules I shouldn't bend?</h3>
+<p>Three. Plug the heater <strong>directly into a wall outlet</strong> — never a power bar or extension cord; they overheat. Keep it a metre from curtains, bedding and furniture. And only use a heater with tip-over and overheat shut-off — both models above have them.</p>
+</div>
+
+<p class="xlinks"><strong>More free tools:</strong>
+<a href="https://inthe6production.github.io/ice-melt-calculator/">Ice Melt Calculator</a>
+<a href="heating.html">Heating Cost Calculator</a>
+<a href="generator.html">Generator Wattage Calculator</a>
+<a href="lights.html">Christmas Lights Planner</a>
+<a href="concrete.html">Concrete Calculator</a>
+<a href="index.html">All tools</a></p>
+
+<footer>
+<p class="small">As an Amazon Associate I earn from qualifying purchases.</p>
+<p class="small">All tools on this site are free to use. Results use the standard 10-watts-per-square-foot rule adjusted for insulation and are estimates — ceiling height, outside temperature and how warm you like it all move the real answer.</p>
+</footer>
+
+<script>
+function calc(){
+  const sqft=+document.getElementById('sqft').value;
+  const insul=document.getElementById('insul').value;
+  const out=document.getElementById('out'), det=document.getElementById('detail');
+  if(!sqft || sqft<20){ out.textContent='Enter the room size in square feet.'; det.textContent=''; return; }
+  const factor={poor:1.25, average:1.0, good:0.8}[insul];
+  const watts=Math.round(sqft*10*factor);
+  const btu=Math.round(watts*3.412);
+  out.textContent='You need about '+watts.toLocaleString('en-CA')+' watts of heat ('+btu.toLocaleString('en-CA')+' BTU per hour).';
+  let note='That is 10 watts per square foot for '+sqft.toLocaleString('en-CA')+' sq ft'+(insul==='poor'?', raised by a quarter for a drafty room':insul==='good'?', lowered for a well-insulated room':'')+'. ';
+  if(watts>1500) note+='That is more than one plug-in heater can safely give (1,500 W is the practical maximum per circuit) — plan on heating the part of the room you use, or two heaters on separate circuits, never on a power bar.';
+  else if(watts>=1200) note+='A standard 1,500 W heater covers it, with a little headroom for the coldest days.';
+  else note+='A standard 1,500 W heater on its low setting covers it — or look for a compact heater in the '+Math.max(500,Math.round(watts/100)*100).toLocaleString('en-CA')+' W range.';
+  det.textContent=note;
+}
+</script>
+
+<!-- VIDEO PUMP MEASUREMENT: GoatCounter counter (ACTIVE since 2026-11-10; site code: inthe6production). Privacy-light: no cookies, no fingerprinting. -->
+<script data-goatcounter="https://inthe6production.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

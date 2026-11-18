@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Air Purifier Size Calculator — What Size Air Purifier Do I Need? (Canada)</title>
+<meta name="description" content="Enter your room size and get the minimum CADR your air purifier needs, using the AHAM two-thirds rule. Plain language, no sign-up — and what the big numbers on the box really mean.">
+<style>
+body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;max-width:760px;margin:0 auto;padding:20px;line-height:1.5;color:#14202b}
+.card{border:1px solid #d7dee6;border-radius:12px;padding:16px;margin:16px 0}
+label{display:block;font-weight:600;margin:12px 0 4px}
+input,select{width:100%;padding:10px;border:1px solid #b9c4cf;border-radius:8px;font-size:16px;box-sizing:border-box}
+button{background:#ff9900;border:0;padding:12px 18px;border-radius:8px;font-weight:700;font-size:16px;cursor:pointer;width:100%}
+.small{font-size:13px;color:#52606d}.result{font-size:20px;font-weight:700}
+a.btn{display:block;text-align:center;background:#232f3e;color:#fff;padding:12px;border-radius:8px;text-decoration:none;margin:8px 0}
+a.open{display:block;text-align:center;background:#ff9900;color:#14202b;padding:12px;border-radius:8px;text-decoration:none;font-weight:700;margin:8px 0}
+.disclosure{background:#fff8e1;border:1px solid #f0d48a;padding:10px;border-radius:8px;font-size:13px}
+footer{border-top:1px solid #d7dee6;margin-top:28px;padding-top:14px}
+.check{display:flex;align-items:center;gap:10px;font-weight:400;margin:0;padding:10px 6px;border-bottom:1px solid #eef2f6}
+.check input{width:22px;height:22px;flex:none}
+.check .w{margin-left:auto;font-size:13px;color:#52606d;text-align:right}
+.faq h3{margin:14px 0 4px;font-size:16px}
+.faq p{margin:0 0 10px}
+nav.top{font-size:14px;margin-bottom:6px}
+.xlinks{font-size:14px}
+.xlinks a{margin-right:10px}
+</style>
+</head>
+<body>
+<nav class="top"><a href="index.html">← All tools</a></nav>
+<h1>What size air purifier do you need?</h1>
+<p>Air purifier boxes shout huge room sizes, but the number that actually matters is <strong>CADR</strong> — how much clean air the machine delivers. The AHAM rule of thumb is simple: <strong>your purifier's CADR should be at least two-thirds of the room's square footage</strong> (for a standard 8-foot ceiling). Enter your room size and get your minimum CADR.</p>
+<p class="disclosure">Disclosure: As an Amazon Associate I earn from qualifying purchases. Links below go to Amazon — tap the button to see the current price there.</p>
+
+<div class="card">
+<label for="sqft">Room size (square feet)</label>
+<input type="number" id="sqft" min="50" max="3000" step="10" value="300">
+<label class="check"><input type="checkbox" id="extra"> Someone smokes, or pets sleep, in this room <span class="w">size up</span></label>
+<button style="margin-top:14px" onclick="calc()">Calculate minimum CADR</button>
+<p class="result" id="out"></p>
+<p id="detail"></p>
+</div>
+
+<h2>Air purifiers that meet the mark</h2>
+<p class="small">As an Amazon Associate I earn from qualifying purchases. Prices change — the button shows the current price on Amazon. CADR figures below are the AHAM-verified smoke ratings — the conservative number to size by.</p>
+<div class="card"><strong>LEVOIT Core 300-P Air Purifier</strong><br>AHAM-verified CADR of 141 — by the two-thirds rule, the right size for rooms up to about 210 sq ft: a bedroom, a den, a home office. Quiet sleep mode, and one of the best-reviewed small purifiers sold in Canada.<a class="btn" href="https://www.amazon.ca/dp/B0DW8YP1LY?tag=inthesixprodu-20" data-slot="purifier-1">Check the current price on Amazon</a></div>
+<div class="card"><strong>WINIX 5500-2 Air Purifier</strong><br>CADR of 232 — covers rooms up to about 348 sq ft by the two-thirds rule: living rooms and large bedrooms. True HEPA plus a washable carbon filter that genuinely helps with cooking and pet odours.<a class="btn" href="https://www.amazon.ca/dp/B01D8DAYII?tag=inthesixprodu-20" data-slot="purifier-2">Check the current price on Amazon</a></div>
+<!-- DRAFT NOTE (Nov 18, 2026): a third slot (LEVOIT Core 400S-P, CADR 231, Amazon.ca B08R794ZMX) is intentionally left empty — the listing is verified on Amazon.ca, but its Amazon.ca star rating could not be read directly (Amazon blocks the read). Dave to confirm the rating in the Amazon app before this slot is filled. -->
+
+<h2>Common questions</h2>
+<div class="faq">
+<h3>Can you show me an example?</h3>
+<p>Say your living room is 300 square feet. Two-thirds of 300 is <strong>200</strong> — so you want a purifier with a CADR of at least 200. Of the two above, the WINIX 5500-2 (CADR 232) clears it; the smaller LEVOIT (141) would be working too hard in that room, though it's the right pick for a 200 sq ft bedroom (two-thirds of 200 is 133).</p>
+<h3>Why does the box claim a much bigger room?</h3>
+<p>Because that claim usually assumes the machine only has to clean the room's air once an hour. The two-thirds rule cleans it about five times an hour, which is what actually keeps pollen and dust down while you're in the room. When a listing gives both numbers, trust the CADR — it's the tested figure.</p>
+<h3>What does the smokers-and-pets box do?</h3>
+<p>It raises the target by half. Smoke and dander are produced continuously, so the guidance for those rooms is a higher air-change rate — for a 300 sq ft room with a smoker, the target becomes a CADR of about 300, which usually means the largest class of home purifier, or two smaller units.</p>
+<h3>What if my ceilings are higher than 8 feet?</h3>
+<p>Taller ceilings mean more air to clean. As a rough adjustment, multiply your answer by the ceiling height divided by 8 — a 10-foot ceiling needs about 25% more CADR than the number shown.</p>
+</div>
+
+<p class="xlinks"><strong>More free tools:</strong>
+<a href="https://inthe6production.github.io/ice-melt-calculator/">Ice Melt Calculator</a>
+<a href="generator.html">Generator Wattage Calculator</a>
+<a href="heating.html">Heating Cost Calculator</a>
+<a href="outage.html">Medical Device Outage Planner</a>
+<a href="lights.html">Christmas Lights Planner</a>
+<a href="index.html">All tools</a></p>
+
+<footer>
+<p class="small">As an Amazon Associate I earn from qualifying purchases.</p>
+<p class="small">All tools on this site are free to use. Results use the AHAM two-thirds rule for 8-foot ceilings and are estimates — a purifier cleans the room it's in, with the door mostly closed; open-plan spaces need the combined area counted.</p>
+</footer>
+
+<script>
+function calc(){
+  const sqft=+document.getElementById('sqft').value;
+  const extra=document.getElementById('extra').checked;
+  const out=document.getElementById('out'), det=document.getElementById('detail');
+  if(!sqft || sqft<20){ out.textContent='Enter the room size in square feet.'; det.textContent=''; return; }
+  let cadr=sqft*2/3;
+  if(extra) cadr*=1.5;
+  cadr=Math.ceil(cadr);
+  out.textContent='Look for a CADR of at least '+cadr.toLocaleString('en-CA')+'.';
+  det.textContent='That is two-thirds of your '+sqft.toLocaleString('en-CA')+' sq ft room'+(extra?', raised by half because of smoke or pets':'')+'. On a listing, use the smoke CADR — it is the lowest of the three tested numbers (smoke, dust, pollen) and the one AHAM sizes rooms by.';
+}
+</script>
+
+<!-- VIDEO PUMP MEASUREMENT: GoatCounter counter (ACTIVE since 2026-11-10; site code: inthe6production). Privacy-light: no cookies, no fingerprinting. -->
+<script data-goatcounter="https://inthe6production.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
